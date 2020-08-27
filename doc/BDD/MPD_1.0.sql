@@ -47,8 +47,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Questions` (
   `Questionnaires_id` INT NOT NULL,
   `TypeValues_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_Questions_Questionnaires_idx` (`Questionnaires_id` ASC) VISIBLE,
-  INDEX `fk_Questions_TypeValues_idx` (`TypeValues_id` ASC) VISIBLE,
   CONSTRAINT `fk_Questions_Questionnaires`
     FOREIGN KEY (`Questionnaires_id`)
     REFERENCES `mydb`.`Questionnaires` (`id`)
@@ -71,7 +69,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Answers` (
   `Date` DATETIME NOT NULL,
   `Questions_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_Answers_Questions_idx` (`Questions_id` ASC) VISIBLE,
   CONSTRAINT `fk_Answers_Questions`
     FOREIGN KEY (`Questions_id`)
     REFERENCES `mydb`.`Questions` (`id`)
