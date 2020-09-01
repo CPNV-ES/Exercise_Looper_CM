@@ -10,6 +10,7 @@ require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil
  */
+
 function homePage(){
     require 'View/View_Reception.php';
 }

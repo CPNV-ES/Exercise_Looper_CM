@@ -17,10 +17,13 @@ error_reporting(E_ALL);
 require "Controller/Controller.php";
 
 try {
-    if (isset($_GET['$Page'])) {
+    if (isset($_GET['$Page']))
+    {
         $Page = $_GET['$Page'];
+
         // Sélection de l'action passée par l'URL
-        switch ($Page) {
+        switch ($Page)
+        {
             case 'Accueil':
                 homePage();
                 break;
@@ -29,7 +32,7 @@ try {
                 break;
         }
     }
-    else{
+    else {
         homePage();
     }
 }catch (Exception $e)
