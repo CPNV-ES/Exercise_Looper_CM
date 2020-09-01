@@ -3,10 +3,7 @@
  * Created by PhpStorm.
  * User: Cyril.GOLDENSCHUE
  * Date: 01/09/2020
- * Time: 11:36
  */
-//$_GET['Page']
-
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -19,8 +16,9 @@ try {
         $Page = $_GET['$Page'];
         // Sélection de l'action passée par l'URL
         switch ($Page) {
-            case 'Accueil':
-                homePage();
+            case 'Home':
+                //homePage();
+                NewExercise();
                 break;
             default :
                 error();
@@ -28,9 +26,10 @@ try {
         }
     }
     else{
-        homePage();
+        //homePage();
+        NewExercise();
     }
 }catch (Exception $e)
 {
-    error ($e->getMessage());
+    error ();
 }
