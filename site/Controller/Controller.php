@@ -21,7 +21,12 @@ function NewExercise(){
     require 'View/View_NewExercise.php';
 }
 
-
+/**
+ * @Description
+ */
+function NewFields(){
+    require 'View/View_NewFields.php';
+}
 
 
 

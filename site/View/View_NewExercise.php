@@ -1,1 +1,43 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Cyril Goldenschue
+ * Date: 01/09/2020
+ */
+?>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>New Exercise</title>
+        <Link href="../Assets/styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <header class="heading banner managing">
+            <section class="container">
+                <a href="../index.php?Page=Home">
+                    <img class="miniLogo" src="../Assets/img/logo.png">
+                </a>
+                <span class="BannerTitle">New exercise</span>
+            </section>
+        </header>
+    <main class="container">
+        <h1>New Exercise</h1>
+        <form action="index.php" method="get">
+            <input type="hidden" name="Page" value="Fields">
+            <div class="field">
+                <label for="exercise_title">Title</label>
+                <input type="text" name="exercise[title]" id="exercise_title">
+            </div>
+            <div class="actions">
+                <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
+            </div>
+        </form>
+    </main>
+
+    <div class="buttons">
+
+    </div>
+    </body>
+</html>

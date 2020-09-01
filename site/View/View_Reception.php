@@ -1,7 +1,26 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Cyril.GOLDENSCHUE
+ * User: Mahieu Burnat
  * Date: 01/09/2020
  */
-echo "Hello world";
+?>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Home Page</title>
+    <Link href="Src/styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="banner">
+    <div class="logo"> </div>
+    <div class="title"></div>
+</div>
+<div class="buttons">
+
+</div>
+</body>
+</html>
+
