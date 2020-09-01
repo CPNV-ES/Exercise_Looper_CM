@@ -5,12 +5,14 @@
  * Date: 01/09/2020
  * Time: 11:36
  */
-//$_GET['Page']
 
-
+//Display Errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+//$_GET['Page']
+
 
 require "Controller/Controller.php";
 
