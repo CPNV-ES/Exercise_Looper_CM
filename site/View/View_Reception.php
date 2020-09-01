@@ -10,16 +10,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Home Page</title>
-        <Link href="Src/styles/style.css" rel="stylesheet" type="text/css">
+        <Link href="src/styles/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
         <div class="banner">
-            <div class="logo"> </div>
-            <div class="title"></div>
+            <div class="logo">
+                <img src="src/img/logo.png" width="50" height="60">
+            </div>
+            <div class="title">
+                <h1> Exercice </h1>
+                <h2> Looper CM </h2>
+            </div>
         </div>
-        <div class="buttons">
 
+        <div class="buttons">
+            <button type="button">Click Me!</button>
+            <button type="button">Click Me!</button>
+            <button type="button">Click Me!</button>
         </div>
     </body>
 </html>

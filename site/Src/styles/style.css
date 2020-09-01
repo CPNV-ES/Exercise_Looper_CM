@@ -3,10 +3,43 @@
  * User: Mahieu Burnat
  * Date: 01/09/2020
  */
+body{
+    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+}
+
+.title > * {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 .banner{
-    background-color: blueviolet;
+    background-color: #9b4dca;
     padding-bottom: 100px;
-    padding-top: 100px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.buttons{
+    padding-top: 10px;
+    text-align: center;
 }
 
