@@ -1,14 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Cyril.GOLDENSCHUE
+ * User: Mahieu Burnat
  * Date: 01/09/2020
- * Time: 11:36
  */
-echo "Welcome to HomePage :D";
-
 ?>
-
 
 <html>
     <head>
@@ -18,7 +14,13 @@ echo "Welcome to HomePage :D";
     </head>
 
     <body>
-        <h3> Hello Sweet Friend ! </h3>
+        <div class="banner">
+            <div class="logo"> </div>
+            <div class="title"></div>
+        </div>
+        <div class="buttons">
+
+        </div>
     </body>
 </html>
 

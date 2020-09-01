@@ -1,4 +1,12 @@
-h3{
-    background-color: aquamarine;
-    color: darkblue;
+/**
+ * Created by PhpStorm.
+ * User: Mahieu Burnat
+ * Date: 01/09/2020
+ */
+
+.banner{
+    background-color: blueviolet;
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
+
