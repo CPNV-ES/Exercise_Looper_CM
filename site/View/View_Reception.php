@@ -24,10 +24,10 @@
             </div>
         </div>
 
-        <div class="buttons">
-            <button type="button">Click Me!</button>
-            <button type="button">Click Me!</button>
-            <button type="button">Click Me!</button>
+        <div class="button">
+            <button id="buttonTake" type="button"> TAKE AN EXERCISE </button>
+            <button id="buttonCreate" type="button"> CREATE AN EXERCISE </button>
+            <button id="buttoManage" type="button"> MANAGE AN EXERCISE</button>
         </div>
     </body>
 </html>

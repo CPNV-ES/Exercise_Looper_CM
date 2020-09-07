@@ -38,8 +38,33 @@ body{
     margin-top: 20px;
 }
 
-.buttons{
-    padding-top: 10px;
+.button {
+    display: flex;
+    display: block;
     text-align: center;
+    padding-top: 10px;
+
 }
 
+.button > * {
+    BACKGROUND: cornflowerblue;
+    BORDER: none;
+    BORDER-RADIUS: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 15px;
+}
+#buttonTake{
+
+}
+
+#buttonCreate{
+
+}
+
+#buttoManage{
+
+}
