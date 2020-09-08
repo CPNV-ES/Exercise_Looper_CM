@@ -26,9 +26,6 @@ try {
             case 'Accueil':
                 homePage();
                 break;
-            case 'NewExercise':
-                newExercise();
-                break;
             default :
                 error();
                 break;
