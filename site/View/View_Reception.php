@@ -25,9 +25,9 @@
         </div>
 
         <div class="button">
-            <button id="buttonTake" type="button"> TAKE AN EXERCISE </button>
-            <button id="buttonCreate" type="button"> CREATE AN EXERCISE </button>
-            <button id="buttoManage" type="button"> MANAGE AN EXERCISE</button>
+            <a id="buttonTake" href="/link/to/page2">TAKE AN EXERCISE</a>
+            <a id="buttonCreate" href="/index.php?Page=NewExercise">CREATE AN EXERCISE</a>
+            <a id="buttonManage" href="/link/to/page2">MANAGE AN EXERCISE</a>
         </div>
     </body>
 </html>

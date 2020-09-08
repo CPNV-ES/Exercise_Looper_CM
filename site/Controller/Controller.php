@@ -15,8 +15,6 @@ function homePage(){
     require 'View/View_Reception.php';
 }
 
-
-
 /**
  * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
  */

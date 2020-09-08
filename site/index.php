@@ -13,7 +13,6 @@ error_reporting(E_ALL);
 
 //$_GET['Page']
 
-
 require "Controller/Controller.php";
 
 try {
@@ -26,6 +25,9 @@ try {
         {
             case 'Accueil':
                 homePage();
+                break;
+            case 'NewExercise':
+                newExercise();
                 break;
             default :
                 error();
