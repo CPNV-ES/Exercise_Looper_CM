@@ -10,12 +10,26 @@ require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil
  */
+
 function homePage(){
     require 'View/View_Reception.php';
 }
 
+function takeExercise(){
 
+    require 'View/takeExercise.php';
+}
 
+function manageExercise(){
+    require 'View/manageExercise.php';
+}
+
+//It could be useful to use that 'cause we can manage a lot of line and time.
+//Discussion in progress.
+function openNewPage($url){
+
+    require 'View/' . $url . '.php';
+}
 /**
  * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
  */
