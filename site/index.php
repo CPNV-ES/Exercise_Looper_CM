@@ -16,15 +16,21 @@ error_reporting(E_ALL);
 require "Controller/Controller.php";
 
 try {
-    if (isset($_GET['$Page']))
+    if (isset($_GET['Page']))
     {
-        $Page = $_GET['$Page'];
+        $Page = $_GET['Page'];
 
         // Sélection de l'action passée par l'URL
         switch ($Page)
         {
             case 'Accueil':
                 homePage();
+                break;
+            case 'TakeExercise':
+                takeExercise();
+                break;
+            case 'ManageExercise':
+                manageExercise();
                 break;
             default :
                 error();
