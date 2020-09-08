@@ -12,27 +12,27 @@
 function getBD()
 {
     // connexion au serveur MySQL et à la BD
-    $connexion = new PDO('mysql:host=localhost; dbname=exercicelooper','ConnectDB', 'Adm1n123');
+    $connection = new PDO('mysql:host=localhost; dbname=exercicelooper','ConnectDB', 'Adm1n123');
     // permet d'avoir plus de détails sur les erreurs retournées
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $connexion;
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $connection;
 }
 
 /**
  * @Description Accès à la table comptes
  * @return PDOStatement
  */
-function CreateExercise(){
+function CreateExercise($Title){
     // connexion à la BD StockElectro
-    $connexion = getBD();
+    $connection = getBD();
 
     // Création de la string pour la requête
     //"INSERT INTO Comptes (NomCompte, PrenomCompte, MailCompte, PasswordCompte, FkRoles) VALUES ('$Nom', '$Prenom','$Email', '$Pswd', '$TypeCompte')";
-    $requete = "INSERT INTO exercises (Title, State) VALUES (, )";
+    $req = "INSERT INTO exercises (Title) VALUES ('$Title')";
     // Exécution de la requete
-    $resultats = $connexion->query($requete);
 
-    return $resultats;
+    $connection->exec($req);
+
 
 
 

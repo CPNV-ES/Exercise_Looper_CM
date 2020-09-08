@@ -25,6 +25,7 @@ function NewExercise(){
  * @Description
  */
 function NewFields(){
+    CreateExercise($_POST['Title']);
     require 'View/View_NewFields.php';
 }
 
