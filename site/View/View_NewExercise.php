@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <header class="heading banner managing">
+        <header class="heading creating">
             <section class="container">
                 <a href="../index.php?Page=Home">
                     <img class="miniLogo" src="../Assets/img/logo.png">
@@ -22,22 +22,25 @@
                 <span class="BannerTitle">New exercise</span>
             </section>
         </header>
-    <main class="container">
-        <h1>New Exercise</h1>
-        <form action="index.php" method="get">
-            <input type="hidden" name="Page" value="Fields">
-            <div class="field">
-                <label for="exercise_title">Title</label>
-                <input type="text" name="exercise[title]" id="exercise_title">
-            </div>
-            <div class="actions">
-                <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
-            </div>
-        </form>
-    </main>
 
-    <div class="buttons">
 
-    </div>
+
+
+
+
+
+        <main class="container">
+            <h1>New Exercise</h1>
+            <form action="index.php" method="post">
+                <input type="hidden" name="Page" value="Fields">
+                <div class="field">
+                    <label for="exercise_title">Title</label>
+                    <input type="text" name="Title" id="exercise_title">
+                </div>
+                <div class="button">
+                    <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
+                </div>
+            </form>
+        </main>
     </body>
 </html>

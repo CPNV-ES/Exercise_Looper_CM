@@ -12,8 +12,13 @@ error_reporting(E_ALL);
 require "Controller/Controller.php";
 
 try {
-    if (isset($_GET['Page'])) {
-        $Page = $_GET['Page'];
+    if (isset($_GET['Page']) or isset($_POST['Page'])) {
+        $Page = "Home";
+        if(isset($_GET['Page'])){
+            $Page = $_GET['Page'];
+        }elseif (isset($_POST['Page'])){
+            $Page = $_POST['Page'];
+        }
         // Sélection de l'action passée par l'URL
         switch ($Page) {
             case 'Home':
@@ -21,7 +26,6 @@ try {
                 NewExercise();
                 break;
             case 'Fields':
-                //homePage();
                 NewFields();
                 break;
             default :
