@@ -3,6 +3,7 @@
  * User: Mahieu Burnat
  * Date: 01/09/2020
  */
+
 body{
     font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     margin: 0;
@@ -46,14 +47,18 @@ body{
     font-size: 35px;
 }
 
-.button {
-    display: block;
+.container-button {
     text-align: center;
     padding-top: 15px;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
 }
 
-.button > * {
-    BORDER: none;
+.container-button > * {
+    width: 300px;
+    border-radius: 5px;
     text-decoration: blink;
     border-radius: 5px;
     padding-top: 8px;
