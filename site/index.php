@@ -33,6 +33,9 @@ try {
             case 'AddQuestion':
                 NewQuestion();
                 break;
+            case 'CompleteExercise':
+                CompleteExercise();
+                break;
             default :
                 error();
                 break;

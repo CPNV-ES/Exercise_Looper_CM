@@ -71,7 +71,7 @@ $id = $Exercise->fetch();
                     </tr>
                     <?php } ?>
                     </tbody>
-                    <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="/exercises/206?exercise%5Bstatus%5D=answering"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
+                    <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
                 </table>
 
                 <div class="column"><h1>New Field</h1></div>

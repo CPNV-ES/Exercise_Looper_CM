@@ -61,7 +61,7 @@ function CreateExercise($Title){
 }
 
 /**
- * @Description Accès à la table comptes
+ * @Description
  * @return PDOStatement
  */
 function CreateFields($Id, $Title, $Value){
@@ -70,6 +70,24 @@ function CreateFields($Id, $Title, $Value){
 
     // Création de la string pour la requête
     $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$Title', '$Value', ".$Id.")";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateStateExercise($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE exercises SET State = 'Answering' WHERE id = ".$id;
     // Exécution de la requete
 
     $connection->exec($req);

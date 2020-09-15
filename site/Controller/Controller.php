@@ -37,7 +37,13 @@ function NewQuestion(){
     require 'View/View_NewFields.php';
 }
 
-
+/**
+ * @Description
+ */
+function CompleteExercise(){
+    UpdateStateExercise($_POST['IdExercise']);
+    homePage();
+}
 
 
 /**
