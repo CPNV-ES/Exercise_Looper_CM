@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="button">
+        <div class="container-button">
             <a id="buttonTake" href="/index.php?Page=TakeExercise">TAKE AN EXERCISE</a>
             <a id="buttonCreate" href="/index.php?Page=NewExercise">CREATE AN EXERCISE</a>
             <a id="buttonManage" href="/index.php?Page=ManageExercise">MANAGE AN EXERCISE</a>
