@@ -18,27 +18,60 @@ function getBD()
     return $connection;
 }
 
-/**
- * @Description Accès à la table comptes
- * @return PDOStatement
- */
-function CreateExercise($Title){
-    // connexion à la BD StockElectro
-    $connection = getBD();
+function GetOneExercise($Title){
 
-    // Création de la string pour la requête
-    //"INSERT INTO Comptes (NomCompte, PrenomCompte, MailCompte, PasswordCompte, FkRoles) VALUES ('$Nom', '$Prenom','$Email', '$Pswd', '$TypeCompte')";
-    $req = "INSERT INTO exercises (Title) VALUES ('$Title')";
-    // Exécution de la requete
+    $connect = getBD();
 
-    $connection->exec($req);
+    $req = "SELECT * FROM exercises WHERE Title = '".$Title."'";
 
+    $result = $connect->query($req);
 
+    return $result;
 
 
 
 
 }
 
+function GetAllExercise(){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+    // Création de la string pour la requête
+    $req = "SELECT * FROM exercises ";
+    // Exécution de la requete
 
+    $result = $connection->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function CreateExercise($Title){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "INSERT INTO exercises (Title) VALUES ('$Title')";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+/**
+ * @Description Accès à la table comptes
+ * @return PDOStatement
+ */
+function CreateFields($Id, $Title, $Value){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$Title', '$Value', ".$Id.")";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
 

@@ -4,19 +4,39 @@
  * User: Cyril Goldenschue
  * Date: 03/09/2020
  */
+
+
+if(isset($_POST['ValueKind']) && isset($_POST['Fields'])){
+    if($_POST['ValueKind'] != "" && $_POST['Fields'] != "") {
+        $ValueKind = $_POST['ValueKind'] . "," . $_POST['FieldValue'];
+        $Fields = $_POST['Fields'] . "," . $_POST['ExerciseTitle'];
+    }else{
+
+        $ValueKind = $_POST['FieldValue'];
+        $Fields = $_POST['ExerciseTitle'];
+    }
+}else{
+    $Fields ="";
+    $ValueKind = "";
+}
+$FieldsArray = explode( ",", $Fields);
+$ValueKindArray = explode(",", $ValueKind);
+
+$Exercise = GetOneExercise($_POST['Title']);
+
+$id = $Exercise->fetch();
+
 ?>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>New Exercise</title>
-        <Link href="../Assets/styles/style.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+        <Link href="../Assets/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
 
-    <body><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <body>
 
     <header class="heading creating">
             <section class="container">
@@ -39,46 +59,45 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table">
+                    <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
                     <tr>
-                        <td>dav</td>
-                        <td>single_line</td>
+                        <td><?= $FieldsArray[$i] ?></td>
+                        <td><?= $ValueKindArray[$i] ?></td>
                         <td>
-                            <a title="Edit" href="/exercises/206/fields/317/edit"><i class="fa fa-edit"></i></a>
-                            <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="/exercises/206/fields/317"><i class="fa fa-trash"></i></a>
+                            <a title="Edit" href="edit"><i class="fa fa-edit"></i></a>
+                            <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="delete"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
+                    <?php } ?>
                     </tbody>
                     <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="/exercises/206?exercise%5Bstatus%5D=answering"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
                 </table>
 
-
-
-
                 <div class="column"><h1>New Field</h1></div>
-                <form action="index.php" method="get">
-                    <input type="hidden" name="Page" value="Fields">
+                <form action="index.php" method="post">
+                    <input type="hidden" name="Page" value="AddQuestion">
+                    <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id ?>">
+                    <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
+                    <input type="hidden" name="Fields" value="<?= $Fields ?>">
+                    <input type="hidden" name="Title" value="<?= $_POST['Title'] ?>">
                     <div class="field">
                         <label for="exercise_title">Label</label>
-                        <input type="text" name="exercise[title]" id="exercise_title">
+                        <input type="text" name="ExerciseTitle" id="exercise_title">
                     </div>
                     <div class="field">
                         <label for="exercise_title">Value kind</label>
-                        <select name="field[value_kind]" id="field_value_kind"><option selected="selected" value="single_line">Single line text</option>
-                            <option value="single_line_list">List of single lines</option>
-                            <option value="multi_line">Multi-line text</option></select>
+                        <select name="FieldValue" id="field_value_kind">
+                            <option selected="selected" value="Single_line_text">Single line text</option>
+                            <option value="List_of_single_lines">List of single lines</option>
+                            <option value="Multi-line_text">Multi-line text</option>
+                        </select>
                     </div>
                     <div class="actions">
                         <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
                     </div>
                 </form>
             </div>
-
-
         </main>
-
-        <div class="buttons">
-
-        </div>
     </body>
 </html>

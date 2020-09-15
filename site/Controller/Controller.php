@@ -29,7 +29,13 @@ function NewFields(){
     require 'View/View_NewFields.php';
 }
 
-
+/**
+ * @Description
+ */
+function NewQuestion(){
+    CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
+    require 'View/View_NewFields.php';
+}
 
 
 

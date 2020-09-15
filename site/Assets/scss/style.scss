@@ -4,6 +4,8 @@
  * Date: 01/09/2020
  */
 
+$color: #9b4dca;
+
 main {
     display: block;
 }
@@ -31,7 +33,7 @@ body {
 }
 
 .button > * {
-    background-color: #9b4dca;
+    background-color: $color;
     BORDER: none;
     border-radius: 5px;
     padding-top: 8px;
@@ -44,7 +46,7 @@ body {
 }
 
 #buttonTake{
-    background-color: #9b4dca;
+    background-color: $color;
 }
 
 #buttonCreate{

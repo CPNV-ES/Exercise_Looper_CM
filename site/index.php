@@ -5,6 +5,8 @@
  * Date: 01/09/2020
  */
 
+session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -27,6 +29,9 @@ try {
                 break;
             case 'Fields':
                 NewFields();
+                break;
+            case 'AddQuestion':
+                NewQuestion();
                 break;
             default :
                 error();
