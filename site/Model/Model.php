@@ -22,7 +22,7 @@ function GetOneExercise($Title){
 
     $connect = getBD();
 
-    $req = "SELECT * FROM exercises WHERE Title = '".$Title."'";
+    $req = "SELECT id FROM exercises WHERE Title = '".$Title."'";
 
     $result = $connect->query($req);
 

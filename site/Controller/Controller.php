@@ -41,7 +41,7 @@ function NewQuestion(){
  * @Description
  */
 function CompleteExercise(){
-    UpdateStateExercise($_POST['IdExercise']);
+    UpdateStateExercise($_GET['Id']);
     homePage();
 }
 

@@ -71,13 +71,13 @@ $id = $Exercise->fetch();
                     </tr>
                     <?php } ?>
                     </tbody>
-                    <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
+                    <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
                 </table>
 
                 <div class="column"><h1>New Field</h1></div>
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="AddQuestion">
-                    <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id ?>">
+                    <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id[0] ?>">
                     <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
                     <input type="hidden" name="Fields" value="<?= $Fields ?>">
                     <input type="hidden" name="Title" value="<?= $_POST['Title'] ?>">
