@@ -3,8 +3,8 @@
  * Created by PhpStorm.
  * User: Cyril.GOLDENSCHUE
  * Date: 01/09/2020
- * Time: 11:36
  */
+
 //appel du fichier model.php pour pouvoir avoir accès au fonction dans le fichier
 require "Model/Model.php";
 /**
@@ -15,6 +15,37 @@ function homePage(){
     require 'View/View_Reception.php';
 }
 
+/**
+ * @Description
+ */
+function NewExercise(){
+    require 'View/View_NewExercise.php';
+}
+
+/**
+ * @Description
+ */
+function NewFields(){
+    CreateExercise($_POST['Title']);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function NewQuestion(){
+    CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function CompleteExercise(){
+    UpdateStateExercise($_GET['Id']);
+    homePage();
+}
+
 function takeExercise(){
 
     require 'View/takeExercise.php';
@@ -22,6 +53,7 @@ function takeExercise(){
 
 function manageExercise(){
     require 'View/manageExercise.php';
+
 }
 
 //It could be useful to use that 'cause we can manage a lot of line and time.
