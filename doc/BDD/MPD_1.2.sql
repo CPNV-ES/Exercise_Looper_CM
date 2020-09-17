@@ -93,6 +93,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 
 DROP USER IF EXISTS ConnectDB@localhost ;
-create user ConnectDB@localhost IDENTIFIED BY 'Adm1n123';
+create user ConnectDB@localhost IDENTIFIED WITH mysql_native_password BY 'Adm1n123';
 GRANT ALL PRIVILEGES on exercicelooper.* to ConnectDB@localhost with grant option;
 FLUSH PRIVILEGES;
+
