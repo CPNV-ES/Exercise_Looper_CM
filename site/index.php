@@ -1,15 +1,16 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Cyril.GOLDENSCHUE
+ * User: Cyril.GOLDENSCHUE & Mathieu Burnat
  * Date: 01/09/2020
  */
 
-session_start();
-
+//Display Errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+//$_GET['Page']
 
 require "Controller/Controller.php";
 
@@ -23,9 +24,12 @@ try {
         }
         // Sélection de l'action passée par l'URL
         switch ($Page) {
-            case 'Home':
+            case 'Accueil':
                 homePage();
                 break;
+            case 'NewExercice':
+                  NewExercise();
+                  break;
             case 'Fields':
                 NewFields();
                 break;
@@ -34,15 +38,21 @@ try {
                 break;
             case 'CompleteExercise':
                 CompleteExercise();
+              break;
+            case 'TakeExercise':
+                takeExercise();
+                break;
+            case 'ManageExercise':
+                manageExercise();
+
                 break;
             default :
                 error();
                 break;
         }
     }
-    else{
-        //homePage();
-        NewExercise();
+    else {
+        homePage();
     }
 }catch (Exception $e)
 {
