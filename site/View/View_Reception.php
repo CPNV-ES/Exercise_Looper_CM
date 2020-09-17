@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Home Page</title>
-        <Link href="src/styles/style.css" rel="stylesheet" type="text/css">
+        <Link href="Assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
         <div class="banner">
             <div class="logo">
-                <img src="src/img/logo.png" width="50" height="60">
+                <img src="Assets/img/logo.png" width="50" height="60">
             </div>
             <div class="title">
                 <h1> Exercice </h1>

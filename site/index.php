@@ -27,7 +27,7 @@ try {
             case 'Accueil':
                 homePage();
                 break;
-            case 'NewExercice':
+            case 'NewExercise':
                   NewExercise();
                   break;
             case 'Fields':
