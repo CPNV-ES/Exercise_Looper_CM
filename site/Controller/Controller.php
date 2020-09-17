@@ -48,11 +48,11 @@ function CompleteExercise(){
 
 function takeExercise(){
 
-    require 'View/takeExercise.php';
+    require 'View/View_TakeExercise.php';
 }
 
 function manageExercise(){
-    require 'View/manageExercise.php';
+    require 'View/View_ManageExercise.php';
 
 }
 
