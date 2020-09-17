@@ -87,3 +87,12 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Create new user to access at DB
+-- -----------------------------------------------------
+
+DROP USER IF EXISTS ConnectDB@localhost ;
+create user ConnectDB@localhost IDENTIFIED BY 'Adm1n123';
+GRANT ALL PRIVILEGES on exercicelooper.* to ConnectDB@localhost with grant option;
+FLUSH PRIVILEGES;
