@@ -24,8 +24,7 @@ try {
         // Sélection de l'action passée par l'URL
         switch ($Page) {
             case 'Home':
-                //homePage();
-                NewExercise();
+                homePage();
                 break;
             case 'Fields':
                 NewFields();
