@@ -23,14 +23,9 @@
             </section>
         </header>
 
-
-
-
-
-
-
-        <main class="container">
+        <main class="container-exercise">
             <h1>New Exercise</h1>
+            <br>
             <form action="index.php" method="post">
                 <input type="hidden" name="Page" value="Fields">
                 <div class="field">
@@ -41,6 +36,5 @@
                     <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
                 </div>
             </form>
-        </main>
     </body>
 </html>

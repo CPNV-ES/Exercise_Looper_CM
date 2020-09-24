@@ -106,11 +106,6 @@ header.creating{
     font-size: 17px;
 }
 
-
-
-
-
-
 /* modifiable a partir de maintenant*/
 
 h1 {
@@ -129,11 +124,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-
-
-
-
-
 .container {
     margin: 0 auto;
     max-width: 112.0rem;
@@ -143,24 +133,24 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-
 }
 
+.container-exercise {
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+}
 
 
 form {
-    display: block;
-    margin-top: 0;
-    margin-block-end: 1rem;
-    margin-bottom: 2.5rem;
-}
-
-blockquote, dl, figure, form, ol, p, pre, table, ul {
-
+color: #9b4dca;
 }
 
 
+.row{
+    color: #9b4dca;
+    
+}
 
 
 

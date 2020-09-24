@@ -25,7 +25,6 @@ $ValueKindArray = explode(",", $ValueKind);
 $Exercise = GetOneExercise($_POST['Title']);
 
 $id = $Exercise->fetch();
-
 ?>
 
 <html>
@@ -33,12 +32,10 @@ $id = $Exercise->fetch();
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>New Exercise</title>
         <Link href="../Assets/css/styleNew.css" rel="stylesheet" type="text/css">
-
     </head>
 
     <body>
-
-    <header class="heading creating">
+        <header class="heading creating">
             <section class="container">
                 <a href="../index.php?Page=Home">
                     <img class="miniLogo" src="../Assets/img/logo.png">
@@ -46,18 +43,16 @@ $id = $Exercise->fetch();
                 <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_POST['Title'] ?></span></span>
             </section>
         </header>
-
-
         <main class="container">
             <div class="row">
                 <div class="column"><h1>Fields</h1></div>
                 <table class="records">
                     <thead>
-                    <tr>
-                        <th>Label</th>
-                        <th>Value kind</th>
-                        <th></th>
-                    </tr>
+                        <tr>
+                            <th>Label</th>
+                            <th>Value kind</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody class="table">
                     <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
@@ -99,5 +94,16 @@ $id = $Exercise->fetch();
                 </form>
             </div>
         </main>
+
+        <div class="row">
+            <div>
+                <h2>Column 1</h2>
+                <p>Some text..</p>
+            </div>
+            <div>
+                <h2>Column 2</h2>
+                <p>Some text..</p>
+            </div>
+        </div>
     </body>
 </html>

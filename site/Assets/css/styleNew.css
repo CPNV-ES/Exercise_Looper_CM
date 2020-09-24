@@ -109,14 +109,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
+  flex-wrap: wrap; }
+
+.container-exercise {
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative; }
 
 form {
-  display: block;
-  margin-top: 0;
-  margin-block-end: 1rem;
-  margin-bottom: 2.5rem; }
+  color: #9b4dca; }
+
+.row {
+  color: #9b4dca; }
 
 *, *:after, *:before {
   box-sizing: inherit; }
