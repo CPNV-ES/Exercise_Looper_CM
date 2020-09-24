@@ -119,11 +119,21 @@ h1, h2, h3, h4, h5, h6 {
 form {
   color: #9b4dca; }
 
-.row {
-  color: #9b4dca; }
+* {
+  box-sizing: border-box; }
 
-*, *:after, *:before {
-  box-sizing: inherit; }
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  /* Should be removed. Only for demonstration */ }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 main, section {
   display: block;

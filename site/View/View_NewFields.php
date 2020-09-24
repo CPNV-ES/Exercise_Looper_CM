@@ -37,7 +37,7 @@ $id = $Exercise->fetch();
     <body>
         <header class="heading creating">
             <section class="container">
-                <a href="../index.php?Page=Home">
+                <a href="../index.php">
                     <img class="miniLogo" src="../Assets/img/logo.png">
                 </a>
                 <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_POST['Title'] ?></span></span>
@@ -95,15 +95,30 @@ $id = $Exercise->fetch();
             </div>
         </main>
 
+
+
+
+
+
+
+
+
+        <h2>Two Equal Columns</h2>
+
         <div class="row">
-            <div>
+            <div class="column" style="background-color:#aaa;">
                 <h2>Column 1</h2>
                 <p>Some text..</p>
             </div>
-            <div>
+            <div class="column" style="background-color:#bbb;">
                 <h2>Column 2</h2>
                 <p>Some text..</p>
             </div>
         </div>
+
+
+
+
+
     </body>
 </html>
