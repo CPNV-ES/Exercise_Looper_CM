@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Home Page</title>
-        <Link href="src/styles/style.css" rel="stylesheet" type="text/css">
+        <Link href="Assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
         <div class="banner">
             <div class="logo">
-                <img src="src/img/logo.png" width="50" height="60">
+                <img src="Assets/img/logo.png" width="50" height="60">
             </div>
             <div class="title">
                 <h1> Exercice </h1>
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="button">
+        <div class="container-button">
             <a id="buttonTake" href="/index.php?Page=TakeExercise">TAKE AN EXERCISE</a>
             <a id="buttonCreate" href="/index.php?Page=NewExercise">CREATE AN EXERCISE</a>
             <a id="buttonManage" href="/index.php?Page=ManageExercise">MANAGE AN EXERCISE</a>

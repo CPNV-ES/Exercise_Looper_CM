@@ -1,9 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Cyril.GOLDENSCHUE
+ * User: Cyril.GOLDENSCHUE & Mathieu Burnat
  * Date: 01/09/2020
- * Time: 11:36
  */
 
 //Display Errors
@@ -16,21 +15,36 @@ error_reporting(E_ALL);
 require "Controller/Controller.php";
 
 try {
-    if (isset($_GET['Page']))
-    {
-        $Page = $_GET['Page'];
-
+    if (isset($_GET['Page']) or isset($_POST['Page'])) {
+        $Page = "Home";
+        if(isset($_GET['Page'])){
+            $Page = $_GET['Page'];
+        }elseif (isset($_POST['Page'])){
+            $Page = $_POST['Page'];
+        }
         // Sélection de l'action passée par l'URL
-        switch ($Page)
-        {
+        switch ($Page) {
             case 'Accueil':
                 homePage();
                 break;
+            case 'NewExercise':
+                  NewExercise();
+                  break;
+            case 'Fields':
+                NewFields();
+                break;
+            case 'AddQuestion':
+                NewQuestion();
+                break;
+            case 'CompleteExercise':
+                CompleteExercise();
+              break;
             case 'TakeExercise':
                 takeExercise();
                 break;
             case 'ManageExercise':
                 manageExercise();
+
                 break;
             default :
                 error();
@@ -42,5 +56,5 @@ try {
     }
 }catch (Exception $e)
 {
-    error ($e->getMessage());
+    error ();
 }
