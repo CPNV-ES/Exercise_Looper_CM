@@ -107,11 +107,15 @@ $id = $Exercise->fetch();
 
         <div class="row">
             <div class="column" style="background-color:#aaa;">
-                <h2>Column 1</h2>
-                <p>Some text..</p>
+                <h1>Fields</h1>
+                <h3>Label</h3>
+                <h3>Value Kind</h3>
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>">
+                    <i class="fa fa-comment">Complete and be ready for answers</i>
+                </a>
             </div>
             <div class="column" style="background-color:#bbb;">
-                <h2>Column 2</h2>
+                <h1>New Field</h1>
                 <p>Some text..</p>
             </div>
         </div>
