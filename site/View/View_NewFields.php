@@ -43,33 +43,38 @@ $id = $Exercise->fetch();
                 <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_POST['Title'] ?></span></span>
             </section>
         </header>
-        <main class="container">
-            <div class="row">
-                <div class="column"><h1>Fields</h1></div>
+
+        <div class="row">
+            <div class="column">
+                <h1>Fields</h1>
                 <table class="records">
                     <thead>
-                        <tr>
-                            <th>Label</th>
-                            <th>Value kind</th>
-                            <th></th>
-                        </tr>
+                    <tr>
+                        <th>Label</th>
+                        <th>Value kind</th>
+                        <th></th>
+                    </tr>
                     </thead>
                     <tbody class="table">
                     <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
-                    <tr>
-                        <td><?= $FieldsArray[$i] ?></td>
-                        <td><?= $ValueKindArray[$i] ?></td>
-                        <td>
-                            <a title="Edit" href="edit"><i class="fa fa-edit"></i></a>
-                            <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="delete"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?= $FieldsArray[$i] ?></td>
+                            <td><?= $ValueKindArray[$i] ?></td>
+                            <td>
+                                <a title="Edit" href="edit"><i class="fa fa-edit"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="delete"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
                     <?php } ?>
                     </tbody>
-                    <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
                 </table>
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>">
+                    <i class="fa fa-comment">Complete and be ready for answers</i>
+                </a>
+            </div>
 
-                <div class="column"><h1>New Field</h1></div>
+            <div class="column">
+                <h1>New Field</h1>
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="AddQuestion">
                     <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id[0] ?>">
@@ -92,31 +97,6 @@ $id = $Exercise->fetch();
                         <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
                     </div>
                 </form>
-            </div>
-        </main>
-
-
-
-
-
-
-
-
-
-        <h2>Two Equal Columns</h2>
-
-        <div class="row">
-            <div class="column" style="background-color:#aaa;">
-                <h1>Fields</h1>
-                <h3>Label</h3>
-                <h3>Value Kind</h3>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>">
-                    <i class="fa fa-comment">Complete and be ready for answers</i>
-                </a>
-            </div>
-            <div class="column" style="background-color:#bbb;">
-                <h1>New Field</h1>
-                <p>Some text..</p>
             </div>
         </div>
 

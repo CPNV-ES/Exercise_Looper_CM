@@ -3,6 +3,9 @@
  * User: Mahieu Burnat & Cyril Goldenschue
  * Date: 01/09/2020
  */
+.row h1 {
+  margin-top: 20px; }
+
 main {
   display: block; }
 
