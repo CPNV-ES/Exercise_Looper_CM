@@ -30,7 +30,7 @@ You can clone the project while using [git](https://docs.github.com/en/github/im
 >- Others branches are connected with the dev, they are unstable  new-features.
 
 ### Installing the DBO
-- Download the last DBO.sql files [here](https://github.com/CPNV-ES/Exercise_Looper_CM/tree/Github-Modifications/doc/BDD/MPD ).
+- Download the last DBO.sql files [here](https://github.com/CPNV-ES/Exercise_Looper_CM/tree/Dev/doc/BDD/MPD).
 - Import-it into [mySQL Workbench 8.0](https://dev.mysql.com/downloads/workbench/).
 	- [Import the database](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html/) with the file. 
 
