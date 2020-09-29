@@ -1,0 +1,24 @@
+{
+  "name": "exercise-looper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-sass": "npm install -g sass\n",
+    "sass": "sass ../scss/styleNew.scss --watch ../css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuBurnat/Flexbox_Grids.git"
+  },
+  "author": "Mathieu and Cyril",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathieuBurnat/Flexbox_Grids/issues"
+  },
+  "homepage": "https://github.com/MathieuBurnat/Flexbox_Grids#readme",
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
+}
