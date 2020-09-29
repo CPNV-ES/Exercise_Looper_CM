@@ -40,7 +40,7 @@ $id = $Exercise->fetch();
 
     <header class="heading creating">
             <section class="container">
-                <a href="../index.php?Page=Home">
+                <a href="../index.php?Page=Accueil">
                     <img class="miniLogo" src="../Assets/img/logo.png">
                 </a>
                 <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_POST['Title'] ?></span></span>

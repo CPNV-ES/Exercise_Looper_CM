@@ -16,8 +16,8 @@
     <body>
         <header class="heading creating">
             <section class="container">
-                <a href="../index.php?Page=Home">
-                    <img class="miniLogo" src="../Assets/img/logo.png">
+                <a href="../index.php?Page=Accueil">
+                    <img  class="miniLogo" src="../Assets/img/logo.png">
                 </a>
                 <span class="BannerTitle">New exercise</span>
             </section>

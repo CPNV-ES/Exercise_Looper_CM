@@ -101,37 +101,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0rem;
   margin-top: 0; }
 
-.container {
-  margin: 0 auto;
-  max-width: 112.0rem;
-  padding: 0 2.0rem;
-  position: relative;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
-
-form {
-  display: block;
-  margin-top: 0;
-  margin-block-end: 1rem;
-  margin-bottom: 2.5rem; }
-
 *, *:after, *:before {
   box-sizing: inherit; }
-
-main, section {
-  display: block;
-  width: 50%;
-  position: absolute; }
-
-div.field, div.actions {
-  margin-bottom: 10px;
-  display: block; }
-
-main.container {
-  margin-top: 5rem; }
 
 /*
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {

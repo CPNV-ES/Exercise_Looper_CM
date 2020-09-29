@@ -52,6 +52,11 @@ function takeExercise(){
 }
 
 function manageExercise(){
+
+    $ExerciseAnswering = GetExerciseByState("Answering");
+    $ExerciseBuilding = GetExerciseByState("Building");
+    $ExerciseClosed = GetExerciseByState("Closed");
+
     require 'View/View_ManageExercise.php';
 
 }

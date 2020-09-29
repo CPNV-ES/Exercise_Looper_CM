@@ -18,6 +18,29 @@ function getBD()
     return $connection;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseByState($State){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Title FROM exercises WHERE State = '".$State."'";
+
+    $result = $connect->query($req);
+
+    return $result;
+
+}
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
 function GetOneExercise($Title){
 
     $connect = getBD();
@@ -27,12 +50,12 @@ function GetOneExercise($Title){
     $result = $connect->query($req);
 
     return $result;
-
-
-
-
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
 function GetAllExercise(){
     // connexion à la BD exercicelooper
     $connection = getBD();

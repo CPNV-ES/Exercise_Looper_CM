@@ -16,7 +16,7 @@ require "Controller/Controller.php";
 
 try {
     if (isset($_GET['Page']) or isset($_POST['Page'])) {
-        $Page = "Home";
+        $Page = "Accueil";
         if(isset($_GET['Page'])){
             $Page = $_GET['Page'];
         }elseif (isset($_POST['Page'])){
