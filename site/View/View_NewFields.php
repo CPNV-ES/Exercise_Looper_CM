@@ -22,9 +22,11 @@ if(isset($_POST['ValueKind']) && isset($_POST['Fields'])){
 $FieldsArray = explode( ",", $Fields);
 $ValueKindArray = explode(",", $ValueKind);
 
-$Exercise = GetOneExercise($_POST['Title']);
 
-$id = $Exercise->fetch();
+    $Exercise = GetOneExercise($_POST['Title']);
+
+    $id = $Exercise->fetch();
+
 
 ?>
 

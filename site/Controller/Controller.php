@@ -33,6 +33,15 @@ function NewFields(){
 /**
  * @Description
  */
+function EditFields(){
+    $ExerciseTitle = GetExerciseById($_GET['id']);
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    require 'View/View_EditFields.php';
+}
+
+/**
+ * @Description
+ */
 function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
     require 'View/View_NewFields.php';

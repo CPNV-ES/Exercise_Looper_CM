@@ -34,6 +34,37 @@ function GetExerciseByState($State){
 
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Title FROM exercises WHERE id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsByExercise($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Label, ValueKind FROM fields WHERE Exercises_id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+
 
 
 

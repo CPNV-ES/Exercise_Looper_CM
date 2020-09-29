@@ -21,9 +21,7 @@
         <title>New Exercise</title>
         <Link href="../Assets/css/styleDash.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -49,6 +47,10 @@
                             ?>
                             <tr>
                                 <td><?= $Building["Title"] ?></td>
+                                <td>
+                                    <a title="Manage fields" href="?id=<?= $Building["id"] ?>&Page=FieldsEdit"><i class="fa fa-edit"></i></a>
+                                    <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="/exercises/<?= $Building["id"] ?>"><i class="fa fa-trash"></i></a>
+                                </td>
                             </tr>
                         <?php } ?>
                     </table>
@@ -63,6 +65,10 @@
                             ?>
                             <tr>
                                 <td><?= $Answering["Title"] ?></td>
+                                <td>
+                                    <a title="Manage fields" href="/exercises/<?= $Answering["id"] ?>/fields"><i class="fa fa-edit"></i></a>
+                                    <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="/exercises/209"><i class="fa fa-trash"></i></a>
+                                </td>
                             </tr>
                         <?php } ?>
                     </table>
@@ -77,6 +83,10 @@
                         ?>
                         <tr>
                             <td><?= $Closed["Title"] ?></td>
+                            <td>
+                                <a title="Manage fields" href="/exercises/209/fields"><i class="fa fa-edit"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="/exercises/209"><i class="fa fa-trash"></i></a>
+                            </td>
                         </tr>
                         <?php } ?>
                     </table>

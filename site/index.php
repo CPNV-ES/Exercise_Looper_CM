@@ -33,6 +33,9 @@ try {
             case 'Fields':
                 NewFields();
                 break;
+            case 'FieldsEdit':
+                EditFields();
+                break;
             case 'AddQuestion':
                 NewQuestion();
                 break;
