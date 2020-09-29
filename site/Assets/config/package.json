@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-sass": "npm install -g sass\n",
-    "sass": "sass ../scss/styleNew.scss --watch ../css"
+    "sass": "sass --watch ../scss/styleNew.scss:../css/styleNew.css"
   },
   "repository": {
     "type": "git",

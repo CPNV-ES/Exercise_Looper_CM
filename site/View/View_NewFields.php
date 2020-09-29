@@ -48,13 +48,11 @@ $id = $Exercise->fetch();
             <div class="column">
                 <h1>Fields</h1>
                 <table class="records">
-                    <thead>
                     <tr>
                         <th>Label</th>
                         <th>Value kind</th>
                         <th></th>
                     </tr>
-                    </thead>
                     <tbody class="table">
                     <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
                         <tr>
@@ -68,8 +66,8 @@ $id = $Exercise->fetch();
                     <?php } ?>
                     </tbody>
                 </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>">
-                    <i class="fa fa-comment">Complete and be ready for answers</i>
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>">
+                    <i class="">Complete and be ready for answers</i>
                 </a>
             </div>
 
@@ -93,7 +91,7 @@ $id = $Exercise->fetch();
                             <option value="Multi-line_text">Multi-line text</option>
                         </select>
                     </div>
-                    <div class="actions">
+                    <div class="actions button">
                         <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
                     </div>
                 </form>

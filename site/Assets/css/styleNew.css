@@ -5,6 +5,11 @@
  */
 .row h1 {
   margin-top: 20px; }
+.row th {
+  text-align: left; }
+
+hr.solid {
+  border-top: 3px solid #bbb; }
 
 main {
   display: block; }
@@ -22,9 +27,12 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.buttonNewFields {
+  text-align: left;
+  color: #9b4dca; }
+
 .button {
   display: block;
-  text-align: center;
   padding-top: 10px; }
 
 .button > * {
@@ -151,26 +159,6 @@ div.field, div.actions {
 main.container {
   margin-top: 5rem; }
 
-/*
-.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
-    background-color: #9b4dca;
-    border: 0.1rem solid #9b4dca;
-    border-radius: .4rem;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    height: 3rem;
-    letter-spacing: .1rem;
-    line-height: 3.8rem;
-    padding: 0 3.0rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-*/
 label, legend {
   display: block;
   font-size: 1.1rem;
