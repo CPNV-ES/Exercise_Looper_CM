@@ -5,6 +5,8 @@
  */
 .row h1 {
   margin-top: 20px; }
+.row th {
+  color: #9b4dca; }
 .row tr {
   text-align: left; }
 .row tr > .td-line {
