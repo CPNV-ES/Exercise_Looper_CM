@@ -57,7 +57,7 @@ function GetFieldsByExercise($id){
 
     $connect = getBD();
 
-    $req = "SELECT Label, ValueKind FROM fields WHERE Exercises_id = ".$id;
+    $req = "SELECT id, Label, ValueKind FROM fields WHERE Exercises_id = ".$id;
 
     $result = $connect->query($req);
 

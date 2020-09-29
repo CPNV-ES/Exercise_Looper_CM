@@ -15,7 +15,7 @@
 
     <body>
         <header class="heading creating">
-            <section class="container">
+            <section>
                 <a href="../index.php?Page=Accueil">
                     <img  class="miniLogo" src="../Assets/img/logo.png">
                 </a>

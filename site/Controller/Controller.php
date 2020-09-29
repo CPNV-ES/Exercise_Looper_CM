@@ -36,7 +36,7 @@ function NewFields(){
 function EditFields(){
     $ExerciseTitle = GetExerciseById($_GET['id']);
     $ExerciseFields = GetFieldsByExercise($_GET['id']);
-    require 'View/View_EditFields.php';
+    require 'View/View_NewFields.php';
 }
 
 /**
