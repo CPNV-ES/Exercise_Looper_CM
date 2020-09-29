@@ -56,8 +56,8 @@ $id = $Exercise->fetch();
                     <tbody class="table">
                     <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
                         <tr>
-                            <td><?= $FieldsArray[$i] ?></td>
-                            <td><?= $ValueKindArray[$i] ?></td>
+                            <td class="td-line"><?= $FieldsArray[$i] ?></td>
+                            <td class="td-line"><?= $ValueKindArray[$i] ?></td>
                             <td>
                                 <a title="Edit" href="edit"><i class="fa fa-edit"></i></a>
                                 <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="delete"><i class="fa fa-trash"></i></a>

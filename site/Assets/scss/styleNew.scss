@@ -12,8 +12,13 @@ $color: #9b4dca;
         margin-top : 20px;
     }
 
-    th{
+    tr{
         text-align: left;
+    }
+
+    tr > .td-line{
+        border-bottom: 1px solid #bbb;
+
     }
 }
 
