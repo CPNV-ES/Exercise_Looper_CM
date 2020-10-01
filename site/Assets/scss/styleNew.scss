@@ -184,18 +184,23 @@ color: #9b4dca;
 .column {
     float: left;
     width: 50%;
+    min-width: 500px;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
-.row:after {
+.row{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.row:after{
     content: "";
     display: table;
     clear: both;
 }
-
-
 
 
 
