@@ -104,6 +104,9 @@ header.creating {
   font-size: 17px; }
 
 /* modifiable a partir de maintenant*/
+.container {
+  margin-top: 4rem; }
+
 h1 {
   display: block;
   font-size: 2em;

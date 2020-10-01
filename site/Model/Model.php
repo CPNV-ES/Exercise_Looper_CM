@@ -18,6 +18,75 @@ function getBD()
     return $connection;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseByState($State){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Title FROM exercises WHERE State = '".$State."'";
+
+    $result = $connect->query($req);
+
+    return $result;
+
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Title FROM exercises WHERE id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsByExercise($id){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE Exercises_id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
 function GetOneExercise($Title){
 
     $connect = getBD();
@@ -27,12 +96,12 @@ function GetOneExercise($Title){
     $result = $connect->query($req);
 
     return $result;
-
-
-
-
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
 function GetAllExercise(){
     // connexion à la BD exercicelooper
     $connection = getBD();
@@ -88,6 +157,21 @@ function UpdateStateExercise($id){
 
     // Création de la string pour la requête
     $req = "UPDATE exercises SET State = 'Answering' WHERE id = ".$id;
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateOneField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE fields SET Label = '".$_POST['FieldTitle']."', ValueKind = '".$_POST['FieldValue']."' WHERE id = ".$id;
     // Exécution de la requete
 
     $connection->exec($req);

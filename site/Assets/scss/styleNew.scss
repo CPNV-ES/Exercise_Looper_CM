@@ -137,6 +137,11 @@ header.creating{
 
 /* modifiable a partir de maintenant*/
 
+.container{
+    margin-top: 4rem;
+}
+
+
 h1 {
     display: block;
     font-size: 2em;
@@ -212,24 +217,11 @@ color: #9b4dca;
 
 .container.column{
 
-}
-
-main, section {
-    display: block;
-    width: 50%;
-    position: absolute;
-}
-
-div.field, div.actions {
-    margin-bottom: 10px;
-    display: block;
-}
 
 
 
-main.container {
-    margin-top: 5rem;
-}
+
+
 
 
 
