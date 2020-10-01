@@ -5,31 +5,9 @@
  * Date: 03/09/2020
  */
 
-
-if(isset($_POST['ValueKind']) && isset($_POST['Fields'])){
-    if($_POST['ValueKind'] != "" && $_POST['Fields'] != "") {
-        $ValueKind = $_POST['ValueKind'] . "," . $_POST['FieldValue'];
-        $Fields = $_POST['Fields'] . "," . $_POST['ExerciseTitle'];
-    }else{
-
-        $ValueKind = $_POST['FieldValue'];
-        $Fields = $_POST['ExerciseTitle'];
-    }
-}else{
-    $Fields ="";
-    $ValueKind = "";
+if(isset($_GET['Page']) || isset($_POST['idExercise'])){
+    $Title = $ExerciseTitle->fetch();
 }
-$FieldsArray = explode( ",", $Fields);
-$ValueKindArray = explode(",", $ValueKind);
-
-if(isset($_POST['Title'])) {
-    $Exercise = GetOneExercise($_POST['Title']);
-    $id = $Exercise->fetch();
-}
-
-if(isset($_GET['Page'])){
-
-$Title = $ExerciseTitle->fetch();
 
 ?>
 
@@ -44,16 +22,45 @@ $Title = $ExerciseTitle->fetch();
 
 <body>
 
-<header class="heading creating">
-    <section>
-        <a href="../index.php?Page=Accueil">
-            <img class="miniLogo" src="../Assets/img/logo.png">
-        </a>
-        <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $Title[0] ?></span></span>
-    </section>
-</header>
+    <header class="heading creating">
+        <section>
+            <a href="../index.php?Page=Accueil">
+                <img class="miniLogo" src="../Assets/img/logo.png">
+            </a>
+            <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= isset($_POST['Title']) ? $_POST['Title'] : $Title[0] ?></span></span>
+        </section>
+    </header>
+
+<?php
+    if(isset($_POST['ValueKind']) && isset($_POST['Fields'])){
+    if($_POST['ValueKind'] != "" && $_POST['Fields'] != "") {
+    $ValueKind = $_POST['ValueKind'] . "," . $_POST['FieldValue'];
+    $Fields = $_POST['Fields'] . "," . $_POST['ExerciseTitle'];
+    }else{
+
+    $ValueKind = $_POST['FieldValue'];
+    $Fields = $_POST['ExerciseTitle'];
+    }
+    }else{
+    $Fields ="";
+    $ValueKind = "";
+    }
+    $FieldsArray = explode( ",", $Fields);
+    $ValueKindArray = explode(",", $ValueKind);
+
+    if(isset($_POST['Title'])) {
+        $Exercise = GetOneExercise($_POST['Title']);
+        $id = $Exercise->fetch();
+    }elseif (isset($_POST['idExercise'])){
+        $Exercise = GetOneExercise($Title[0]);
+        $id = $Exercise->fetch();
+    }
+
+    if(isset($_GET['Page'])){
 
 
+    //Manage Fields
+    ?>
 <main class="container">
     <div class="row">
         <div class="column"><h1>Fields</h1></div>
@@ -69,13 +76,13 @@ $Title = $ExerciseTitle->fetch();
                     <td><?= $AllField["Label"] ?></td>
                     <td><?= $AllField["ValueKind"] ?></td>
                     <td>
-                        <a title="Edit" href="?Page=EditField&id=<?= $AllField["id"] ?>"><i class="fa fa-edit"></i></a>
-                        <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DeleteField&id=<?= $AllField["id"] ?>"><i class="fa fa-trash"></i></a>
+                        <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit"></i></a>
+                        <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DeleteField&idField=<?= $AllField["id"] ?>"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             <?php } ?>
             </tbody>
-            <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=SaveExercise&Id=<?= $_GET['id'] ?>"><i class="fa fa-comment"></i> Save</a>
+            <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $_GET['id'] ?>"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
         </table>
 
         <div class="column"><h1>New Field</h1></div>
@@ -105,30 +112,12 @@ $Title = $ExerciseTitle->fetch();
 </main>
 </body>
 </html>
-<?php
+
+    <?php
 }else{
-?>
-
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>New Exercise</title>
-        <Link href="../Assets/css/styleNew.css" rel="stylesheet" type="text/css">
-
-    </head>
-
+    //New Fields
+    ?>
     <body>
-
-    <header class="heading creating">
-            <section>
-                <a href="../index.php?Page=Accueil">
-                    <img class="miniLogo" src="../Assets/img/logo.png">
-                </a>
-                <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_POST['Title'] ?></span></span>
-            </section>
-        </header>
-
-
         <main class="container">
             <div class="row">
                 <div class="column"><h1>Fields</h1></div>
@@ -141,15 +130,15 @@ $Title = $ExerciseTitle->fetch();
                     </tr>
                     </thead>
                     <tbody class="table">
-                    <?php for ($i = 0; $i < count($FieldsArray); $i++){ ?>
-                    <tr>
-                        <td><?= $FieldsArray[$i] ?></td>
-                        <td><?= $ValueKindArray[$i] ?></td>
-                        <td>
-                            <a title="Edit" href="edit"><i class="fa fa-edit"></i></a>
-                            <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="delete"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
+                    <?php while($AllField=$ExerciseFields->fetch()){ ?>
+                        <tr>
+                            <td><?= $AllField["Label"] ?></td>
+                            <td><?= $AllField["ValueKind"] ?></td>
+                            <td>
+                                <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DeleteField&idField=<?= $AllField["id"] ?>"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
                     <?php } ?>
                     </tbody>
                     <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= $id[0] ?>"><i class="fa fa-comment"></i> Complete and be ready for answers</a>
@@ -161,7 +150,7 @@ $Title = $ExerciseTitle->fetch();
                     <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id[0] ?>">
                     <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
                     <input type="hidden" name="Fields" value="<?= $Fields ?>">
-                    <input type="hidden" name="Title" value="<?= $_POST['Title'] ?>">
+                    <input type="hidden" name="Title" value="<?= isset($_POST['Title']) ? $_POST['Title'] : $Title[0] ?>">
                     <div class="field">
                         <label for="exercise_title">Label</label>
                         <input type="text" name="ExerciseTitle" id="exercise_title">

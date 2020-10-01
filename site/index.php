@@ -28,13 +28,19 @@ try {
                 homePage();
                 break;
             case 'NewExercise':
-                  NewExercise();
-                  break;
+                NewExercise();
+                break;
             case 'Fields':
                 NewFields();
                 break;
             case 'FieldsEdit':
                 EditFields();
+                break;
+            case 'EditField':
+                EditOneField();
+                break;
+            case 'FieldsUpdate':
+                UpdateField();
                 break;
             case 'AddQuestion':
                 NewQuestion();

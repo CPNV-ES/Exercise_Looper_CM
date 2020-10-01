@@ -23,12 +23,6 @@
             </section>
         </header>
 
-
-
-
-
-
-
         <main class="container">
             <h1>New Exercise</h1>
             <form action="index.php" method="post">

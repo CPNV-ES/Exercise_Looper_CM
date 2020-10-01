@@ -57,7 +57,22 @@ function GetFieldsByExercise($id){
 
     $connect = getBD();
 
-    $req = "SELECT id, Label, ValueKind FROM fields WHERE Exercises_id = ".$id;
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE Exercises_id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE id = ".$id;
 
     $result = $connect->query($req);
 
@@ -142,6 +157,21 @@ function UpdateStateExercise($id){
 
     // Création de la string pour la requête
     $req = "UPDATE exercises SET State = 'Answering' WHERE id = ".$id;
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateOneField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE fields SET Label = '".$_POST['FieldTitle']."', ValueKind = '".$_POST['FieldValue']."' WHERE id = ".$id;
     // Exécution de la requete
 
     $connection->exec($req);
