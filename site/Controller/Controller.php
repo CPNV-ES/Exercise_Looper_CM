@@ -79,7 +79,25 @@ function NewQuestion(){
  */
 function CompleteExercise(){
     UpdateStateExercise($_GET['Id']);
-    homePage();
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function suppExercise(){
+    DeleteExercise($_GET['id']);
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function suppField(){
+    $ExerciseTitle = GetExerciseById($_GET['idExercise']);
+    DeleteField($_GET['idField']);
+    $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    require 'View/View_NewFields.php';
 }
 
 function takeExercise(){
