@@ -5,7 +5,6 @@
  * Date: 01/09/2020
  */
 
-//appel du fichier model.php pour pouvoir avoir accès au fonction dans le fichier
 require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil
@@ -59,11 +58,10 @@ function manageExercise(){
 //It could be useful to use that 'cause we can manage a lot of line and time.
 //Discussion in progress.
 function openNewPage($url){
-
     require 'View/' . $url . '.php';
 }
 /**
- * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
+ * @Description Display erros if the webpaage searched doesn't exists
  */
 function error(){
     //affichage de la page d'erreur
