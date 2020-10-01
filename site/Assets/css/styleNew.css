@@ -144,9 +144,7 @@ form {
   float: left;
   width: 50%;
   min-width: 500px;
-  padding: 10px;
-  height: 300px;
-  /* Should be removed. Only for demonstration */ }
+  padding: 10px; }
 
 /* Clear floats after the columns */
 .row {
