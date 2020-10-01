@@ -5,6 +5,12 @@
  * Date: 01/09/2020
  */
 
+?>
+
+    <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+<?php
+
+
 require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil

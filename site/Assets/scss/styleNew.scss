@@ -8,6 +8,7 @@
 $color: #9b4dca;
 
 .row{
+    
     h1{
         margin-top : 20px;
     }
@@ -137,11 +138,6 @@ header.creating{
 
 /* modifiable a partir de maintenant*/
 
-.container{
-    margin-top: 4rem;
-}
-
-
 h1 {
     display: block;
     font-size: 2em;
@@ -161,12 +157,17 @@ h1, h2, h3, h4, h5, h6 {
 .container {
     margin: 0 auto;
     max-width: 112.0rem;
-    padding: 0 2.0rem;
+    padding: 0 15px;
     position: relative;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+main.container{
+
+    margin-top: 4rem;
 }
 
 .container-exercise {
@@ -178,8 +179,8 @@ h1, h2, h3, h4, h5, h6 {
 
 form {
 color: #9b4dca;
+    width:100%
 }
-
 
 * {
     box-sizing: border-box;
@@ -197,7 +198,7 @@ color: #9b4dca;
 .row{
     display: flex;
     flex-wrap: wrap;
-
+    margin-top: 1rem;
 }
 
 .row:after{
@@ -215,10 +216,10 @@ color: #9b4dca;
 
 
 
-.container.column{
+.container.column {
 
 
-
+}
 
 
 
@@ -240,16 +241,11 @@ label, legend {
 }
 
 input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     background-color: transparent;
     border: 0.1rem solid #d1d1d1;
     border-radius: .4rem;
-    box-shadow: none;
-    box-sizing: inherit;
-    height: 1rem;
     padding: .6rem 1.0rem;
     width: 100%;
+    margin-bottom: 10px;
 }
 
