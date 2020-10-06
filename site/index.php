@@ -1,69 +1,67 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cyril.GOLDENSCHUE & Mathieu Burnat
- * Date: 01/09/2020
- */
+    /**
+     * Created by PhpStorm.
+     * User: Cyril.GOLDENSCHUE & Mathieu Burnat
+     * Date: 01/09/2020
+     */
 
-//Display Errors
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    //Display Errors
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-//$_GET['Page']
+    require "Controller/Controller.php";
 
-require "Controller/Controller.php";
 
-try {
-    if (isset($_GET['Page']) or isset($_POST['Page'])) {
-        $Page = "Accueil";
-        if(isset($_GET['Page'])){
-            $Page = $_GET['Page'];
-        }elseif (isset($_POST['Page'])){
-            $Page = $_POST['Page'];
-        }
-        // Sélection de l'action passée par l'URL
-        switch ($Page) {
-            case 'Accueil':
-                homePage();
-                break;
-            case 'NewExercise':
-                NewExercise();
-                break;
-            case 'Fields':
-                NewFields();
-                break;
-            case 'FieldsEdit':
-                EditFields();
-                break;
-            case 'EditField':
-                EditOneField();
-                break;
-            case 'FieldsUpdate':
-                UpdateField();
-                break;
-            case 'AddQuestion':
-                NewQuestion();
-                break;
-            case 'CompleteExercise':
-                CompleteExercise();
-              break;
-            case 'TakeExercise':
-                takeExercise();
-                break;
-            case 'ManageExercise':
-                manageExercise();
+    $request = '';
+    $get_params_offset = stripos($_SERVER['REQUEST_URI'], '?');
 
-                break;
-            default :
-                error();
-                break;
-        }
+
+    // Remove GET parameters from request uri
+    if ($get_params_offset) {
+        $request = substr($_SERVER['REQUEST_URI'], 0, $get_params_offset);
+    } else {
+        $request = $_SERVER['REQUEST_URI'];
     }
-    else {
-        homePage();
+
+    switch ($request) {
+        case '' :
+        case '/' :
+            require 'View/View_Reception.php'; //home directory
+            break;
+        case '/TakeExercise' :
+            require 'View/View_TakeExercise.php';
+            break;
+        case '/NewExercise' :
+            require 'View/View_NewExercise.php';
+            break;
+        case '/NewFields' :
+            NewFields();
+            break;
+        case '/EditFields' :
+            EditFields();
+            break;
+        case '/UpdateField' :
+            UpdateField();
+            break;
+        case '/NewQuestion' :
+            NewQuestion();
+            break;
+        case '/CompleteExercise' :
+            CompleteExercise();
+            break;
+        case '/takeExercise' :
+            takeExercise();
+            break;
+        case '/manageExercise' :
+            manageExercise();
+            break;
+        case '/ManageExercise' :
+            require 'View/View_ManageExercise.php';
+            break;
+        default:
+            http_response_code(404);
+            require 'View/View_Error404.php'; //Aie, something wrong ! (page not found)
+            break;
     }
-}catch (Exception $e)
-{
-    error ();
-}
+?>
