@@ -15,7 +15,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>New Exercise</title>
-        <Link href="../Assets/css/styleNew.css" rel="stylesheet" type="text/css">
+
     </head>
 
     <body>

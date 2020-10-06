@@ -3,41 +3,8 @@
  * User: Cyril Goldenschue
  * Date: 29/09/2020
  */
-main {
-  display: block; }
-
 .icon {
   justify-content: right; }
-
-body {
-  color: #606c76;
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.6em;
-  font-weight: 3000;
-  letter-spacing: .01em;
-  line-height: 1.6; }
-
-.logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.button {
-  display: block;
-  text-align: center;
-  padding-top: 10px; }
-
-.button > * {
-  background-color: #9b4dca;
-  BORDER: none;
-  border-radius: 5px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin: 10px;
-  color: white;
-  font-size: 15px; }
 
 main.container {
   margin-top: 5rem;
@@ -58,53 +25,9 @@ main.container {
   margin-bottom: 50px;
   margin-left: 50px; }
 
-.title {
-  color: white;
-  text-align: center;
-  font-size: 15px;
-  margin-top: 20px; }
-
-.title > h1 {
-  font-size: 50px; }
-
-.title > h2 {
-  font-size: 35px; }
-
-.miniLogo {
-  height: 50px;
-  width: 50px; }
-
-header.heading {
-  height: 5rem;
-  color: white;
-  display: block;
-  left: 0;
-  max-width: 100%;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1; }
-
 header.dashbord {
   background-color: #26622b;
   height: 3rem; }
-
-.BannerTitle {
-  margin: auto;
-  margin-left: 2rem;
-  color: white;
-  font-size: 17px; }
-
-.container {
-  margin: 0 auto;
-  max-width: 112.0rem;
-  padding: 0 15px;
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
 
 div.field, div.actions {
   margin-bottom: 10px;

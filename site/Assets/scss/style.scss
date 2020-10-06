@@ -8,10 +8,6 @@ $manageColor : #26622b;
 $newColor : #c87d0d;
 $takeColor : #9b4dca;
 
-body{
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    margin: 0;
-}
 
 .title > * {
     margin: 0;
@@ -30,26 +26,9 @@ body{
     padding: 50px;
 }
 
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-.title{
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-}
 
-.title > h1{
-    font-size: 50px;
-}
 
-.title > h2{
-    font-size: 35px;
-}
 
 .container-button {
     text-align: center;
@@ -73,16 +52,4 @@ body{
     color: white;
     font-size: 15px;
 }
-#buttonTake{
-    background-color: $takeColor;
-}
 
-#buttonCreate{
-    background-color: $newColor;
-
-}
-
-#buttonManage{
-    background-color: $manageColor;
-
-}

@@ -3,10 +3,6 @@
  * User: Mahieu Burnat
  * Date: 01/09/2020
  */
-body {
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  margin: 0; }
-
 .title > * {
   margin: 0; }
 
@@ -20,23 +16,6 @@ body {
   width: 100%;
   text-align: center;
   padding: 50px; }
-
-.logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.title {
-  color: white;
-  text-align: center;
-  font-size: 15px;
-  margin-top: 20px; }
-
-.title > h1 {
-  font-size: 50px; }
-
-.title > h2 {
-  font-size: 35px; }
 
 .container-button {
   text-align: center;
@@ -57,14 +36,5 @@ body {
   margin: 10px;
   color: white;
   font-size: 15px; }
-
-#buttonTake {
-  background-color: #9b4dca; }
-
-#buttonCreate {
-  background-color: #c87d0d; }
-
-#buttonManage {
-  background-color: #26622b; }
 
 /*# sourceMappingURL=style.css.map */
