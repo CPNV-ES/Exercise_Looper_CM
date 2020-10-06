@@ -12,10 +12,8 @@
 
     require "Controller/Controller.php";
 
-
     $request = '';
     $get_params_offset = stripos($_SERVER['REQUEST_URI'], '?');
-
 
     // Remove GET parameters from request uri
     if ($get_params_offset) {
@@ -49,7 +47,7 @@
             NewQuestion();
             break;
         case '/CompleteExercise' :
-            CompleteExercise();
+            CompleteExercise($_GET['Id']);
             break;
         case '/takeExercise' :
             takeExercise();

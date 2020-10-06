@@ -77,8 +77,8 @@ function NewQuestion(){
 /**
  * @Description
  */
-function CompleteExercise(){
-    UpdateStateExercise($_GET['Id']);
+function CompleteExercise($id){
+    UpdateStateExercise($id);
     homePage();
 }
 
