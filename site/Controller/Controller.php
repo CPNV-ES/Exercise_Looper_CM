@@ -8,6 +8,7 @@
 ?>
 
     <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+    <Link href="../Assets/css/StyleGlobal.css" rel="stylesheet" type="text/css">
 <?php
 
 
