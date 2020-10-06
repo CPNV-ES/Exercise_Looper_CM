@@ -12,7 +12,8 @@ body {
   font-size: 1.6em;
   font-weight: 3000;
   letter-spacing: .01em;
-  line-height: 1.6; }
+  line-height: 1.6;
+  margin: 0; }
 
 .logo {
   display: block;
