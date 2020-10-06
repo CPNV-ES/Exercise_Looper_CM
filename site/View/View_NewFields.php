@@ -80,11 +80,11 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     </tbody>
                     </table>
                 <?php if(isset($_GET['id'])){ ?>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
                 <?php }elseif (isset($_GET['idExercise'])){ ?>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
             <?php } ?>

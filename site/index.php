@@ -47,7 +47,13 @@ try {
                 break;
             case 'CompleteExercise':
                 CompleteExercise();
-              break;
+                break;
+            case 'ClosedExercise':
+                ClosedExercise();
+                break;
+            case 'ResultExercise':
+                ResultAnswer();
+                break;
             case 'TakeExercise':
                 takeExercise();
                 break;

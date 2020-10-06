@@ -6,6 +6,9 @@
 main {
   display: block; }
 
+.icon {
+  justify-content: right; }
+
 body {
   color: #606c76;
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
