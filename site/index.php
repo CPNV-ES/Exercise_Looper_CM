@@ -39,6 +39,7 @@
             NewFields();
             break;
         case '/EditFields' :
+            NewQuestion();
             EditFields();
             break;
         case '/UpdateField' :

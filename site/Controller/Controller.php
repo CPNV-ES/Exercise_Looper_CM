@@ -41,8 +41,8 @@ function NewFields(){
  * @Description
  */
 function EditFields(){
-    $ExerciseTitle = GetExerciseById($_GET['id']);
-    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $ExerciseTitle = GetExerciseById($_POST['IdExercise']);
+    $ExerciseFields = GetFieldsByExercise($_POST['IdExercise']);
     require 'View/View_NewFields.php';
 }
 
@@ -71,7 +71,7 @@ function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
     $idExercise = GetOneExercise($_POST['Title'])->fetch();
     $ExerciseFields = GetFieldsByExercise($idExercise[0]);
-    require 'View/View_NewFields.php';
+
 }
 
 /**

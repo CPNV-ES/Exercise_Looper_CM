@@ -79,7 +79,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <?php } ?>
                     </tbody>
                     </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="/CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
             </div>
@@ -138,14 +138,14 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <?php } ?>
                     </tbody>
                 </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
             </div>
 
             <div class="column">
                 <h1>New Field</h1>
-                <form action="index.php" method="post">
+                <form action="EditFields" method="post">
                     <input type="hidden" name="Page" value="AddQuestion">
                     <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id[0] ?>">
                     <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
