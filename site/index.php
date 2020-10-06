@@ -53,7 +53,12 @@ try {
                 break;
             case 'ManageExercise':
                 manageExercise();
-
+                break;
+            case 'DelExercise':
+                suppExercise();
+                break;
+            case 'DelField':
+                suppField();
                 break;
             default :
                 error();

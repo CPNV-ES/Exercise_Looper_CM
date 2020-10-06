@@ -3,6 +3,20 @@
  * User: Mahieu Burnat & Cyril Goldenschue
  * Date: 01/09/2020
  */
+.row h1 {
+  margin-top: 20px; }
+.row th {
+  color: #9b4dca;
+  text-align: center; }
+.row tr {
+  text-align: left; }
+.row tr > .td-line {
+  border-bottom: 1px solid #bbb;
+  padding: 0.5rem 1.5rem; }
+
+hr.solid {
+  border-top: 3px solid #bbb; }
+
 main {
   display: block; }
 
@@ -19,9 +33,12 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.buttonNewFields {
+  text-align: left;
+  color: #9b4dca; }
+
 .button {
   display: block;
-  text-align: center;
   padding-top: 10px; }
 
 .button > * {
@@ -87,9 +104,6 @@ header.creating {
   font-size: 17px; }
 
 /* modifiable a partir de maintenant*/
-.container {
-  margin-top: 4rem; }
-
 h1 {
   display: block;
   font-size: 2em;
@@ -104,29 +118,49 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0rem;
   margin-top: 0; }
 
-*, *:after, *:before {
-  box-sizing: inherit; }
+.container {
+  margin: 0 auto;
+  max-width: 112.0rem;
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
 
-/*
-.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
-    background-color: #9b4dca;
-    border: 0.1rem solid #9b4dca;
-    border-radius: .4rem;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    height: 3rem;
-    letter-spacing: .1rem;
-    line-height: 3.8rem;
-    padding: 0 3.0rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-*/
+main.container {
+  margin-top: 4rem; }
+
+.container-exercise {
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative; }
+
+form {
+  color: #9b4dca;
+  width: 100%; }
+
+* {
+  box-sizing: border-box; }
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  min-width: 500px;
+  padding: 10px; }
+
+/* Clear floats after the columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 label, legend {
   display: block;
   font-size: 1.1rem;
@@ -134,16 +168,11 @@ label, legend {
   margin-bottom: .5rem; }
 
 input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   background-color: transparent;
   border: 0.1rem solid #d1d1d1;
   border-radius: .4rem;
-  box-shadow: none;
-  box-sizing: inherit;
-  height: 1rem;
   padding: .6rem 1.0rem;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=styleNew.css.map */

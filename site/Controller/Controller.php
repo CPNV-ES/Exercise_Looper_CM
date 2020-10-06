@@ -5,7 +5,12 @@
  * Date: 01/09/2020
  */
 
-//appel du fichier model.php pour pouvoir avoir accès au fonction dans le fichier
+?>
+
+    <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+<?php
+
+
 require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil
@@ -74,7 +79,25 @@ function NewQuestion(){
  */
 function CompleteExercise(){
     UpdateStateExercise($_GET['Id']);
-    homePage();
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function suppExercise(){
+    DeleteExercise($_GET['id']);
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function suppField(){
+    $ExerciseTitle = GetExerciseById($_GET['idExercise']);
+    DeleteField($_GET['idField']);
+    $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    require 'View/View_NewFields.php';
 }
 
 function takeExercise(){
@@ -95,11 +118,10 @@ function manageExercise(){
 //It could be useful to use that 'cause we can manage a lot of line and time.
 //Discussion in progress.
 function openNewPage($url){
-
     require 'View/' . $url . '.php';
 }
 /**
- * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
+ * @Description Display erros if the webpaage searched doesn't exists
  */
 function error(){
     //affichage de la page d'erreur

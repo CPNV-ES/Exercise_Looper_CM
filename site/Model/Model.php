@@ -177,3 +177,49 @@ function UpdateOneField($id){
     $connection->exec($req);
 }
 
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteExercise($id){
+    $connection = getBD();
+
+    $req = "DELETE FROM fields WHERE Exercises_id = $id";
+
+    $connection->exec($req);
+
+    $req = "DELETE FROM exercises WHERE id = $id";
+
+    $connection->exec($req);
+
+
+
+
+
+
+
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "DELETE FROM fields WHERE id = $id";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+
+
+

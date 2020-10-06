@@ -15,16 +15,17 @@
 
     <body>
         <header class="heading creating">
-            <section>
-                <a href="../index.php?Page=Accueil">
-                    <img  class="miniLogo" src="../Assets/img/logo.png">
+            <section class="container">
+                <a href="../index.php">
+                    <img class="miniLogo" src="../Assets/img/logo.png">
                 </a>
                 <span class="BannerTitle">New exercise</span>
             </section>
         </header>
 
-        <main class="container">
+        <main class="container-exercise">
             <h1>New Exercise</h1>
+            <br>
             <form action="index.php" method="post">
                 <input type="hidden" name="Page" value="Fields">
                 <div class="field">
@@ -35,6 +36,5 @@
                     <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
                 </div>
             </form>
-        </main>
     </body>
 </html>

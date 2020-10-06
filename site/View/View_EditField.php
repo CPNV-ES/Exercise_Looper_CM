@@ -16,11 +16,11 @@
 
     <body>
         <header class="heading creating">
-            <section>
-                <a href="../index.php?Page=Accueil">
-                    <img  class="miniLogo" src="../Assets/img/logo.png">
+            <section class="container">
+                <a href="../index.php">
+                    <img class="miniLogo" src="../Assets/img/logo.png">
                 </a>
-                <span class="BannerTitle">New exercise</span>
+                <span class="BannerTitle">Exercise : <span style="font-weight: bold;">Field</span></span>
             </section>
         </header>
         <main class="container">
@@ -42,7 +42,7 @@
                     </select>
                 </div>
                 <?php } ?>
-                <div class="actions">
+                <div class="actions button">
                     <input type="submit" name="commit" value="Update Exercise">
                 </div>
             </form>
