@@ -26,7 +26,7 @@
         <main class="container-exercise">
             <h1>New Exercise</h1>
             <br>
-            <form action="index.php" method="post">
+            <form action="\NewFields" method="post">
                 <input type="hidden" name="Page" value="Fields">
                 <div class="field">
                     <label for="exercise_title">Title</label>

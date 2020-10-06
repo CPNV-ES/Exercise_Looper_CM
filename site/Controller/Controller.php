@@ -88,24 +88,10 @@ function takeExercise(){
 }
 
 function manageExercise(){
-
     $ExerciseAnswering = GetExerciseByState("Answering");
     $ExerciseBuilding = GetExerciseByState("Building");
     $ExerciseClosed = GetExerciseByState("Closed");
 
     require 'View/View_ManageExercise.php';
-
 }
 
-//It could be useful to use that 'cause we can manage a lot of line and time.
-//Discussion in progress.
-function openNewPage($url){
-    require 'View/' . $url . '.php';
-}
-/**
- * @Description Display erros if the webpaage searched doesn't exists
- */
-function error(){
-    //affichage de la page d'erreur
-    require 'View/View_Error.php';
-}
