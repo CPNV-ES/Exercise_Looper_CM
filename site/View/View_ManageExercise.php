@@ -40,12 +40,13 @@
                         <tr><th>Title</th></tr>
                         <?php
                         while($Building=$ExerciseBuilding->fetch()){
-                            //0 = id; 1 = Title
+                            $FieldBuilding = GetFieldsByExercise($Building['id']);
+                            $ExerciseId = $FieldBuilding->fetch();
                             ?>
                             <tr>
                                 <td><?= $Building["Title"] ?></td>
                                 <td class="icon">
-                                    <?php if($Building["NbFields"] != 0){ ?>
+                                    <?php if($ExerciseId != false){ ?>
                                     <a title="Be ready for answers" rel="nofollow" data-method="put" href="?Page=CompleteExercise&id=<?= $Building["id"] ?>"><i class="fa fa-comment"></i></a>
                                     <?php } ?>
                                     <a title="Manage fields" href="?id=<?= $Building["id"] ?>&Page=FieldsEdit"><i class="fa fa-edit"></i></a>

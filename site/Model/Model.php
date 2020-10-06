@@ -26,7 +26,7 @@ function GetExerciseByState($State){
 
     $connect = getBD();
 
-    $req = "SELECT exercises.id, Title, COUNT(fields.Exercises_id) as NbFields FROM exercises INNER JOIN fields ON fields.Exercises_id = exercises.id WHERE State = '".$State."' GROUP BY exercises.id";
+    $req = "SELECT exercises.id, Title FROM exercises WHERE State = '".$State."'";
 
     $result = $connect->query($req);
 
@@ -79,10 +79,6 @@ function GetFieldsById($id){
     return $result;
 }
 
-
-
-
-
 /**
  * @Description
  * @return PDOStatement
@@ -98,21 +94,11 @@ function GetOneExercise($Title){
     return $result;
 }
 
-/**
- * @Description
- * @return PDOStatement
- */
-function GetAllExercise(){
-    // connexion à la BD exercicelooper
-    $connection = getBD();
-    // Création de la string pour la requête
-    $req = "SELECT * FROM exercises ";
-    // Exécution de la requete
 
-    $result = $connection->query($req);
 
-    return $result;
-}
+
+
+
 
 /**
  * @Description
@@ -143,6 +129,8 @@ function CreateFields($Id, $Title, $Value){
 
     $connection->exec($req);
 }
+
+
 
 
 
@@ -181,6 +169,9 @@ function UpdateOneField($id){
 
 
 
+
+
+
 /**
  * @Description
  * @return PDOStatement
@@ -195,13 +186,6 @@ function DeleteExercise($id){
     $req = "DELETE FROM exercises WHERE id = $id";
 
     $connection->exec($req);
-
-
-
-
-
-
-
 }
 
 /**

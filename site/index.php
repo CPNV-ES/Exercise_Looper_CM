@@ -61,10 +61,10 @@ try {
                 manageExercise();
                 break;
             case 'DelExercise':
-                suppExercise();
+                DelExercise();
                 break;
             case 'DelField':
-                suppField();
+                DelField();
                 break;
             default :
                 error();

@@ -112,7 +112,7 @@ function ClosedExercise(){
 /**
  * @Description
  */
-function suppExercise(){
+function DelExercise(){
     DeleteExercise($_GET['id']);
     manageExercise();
 }
@@ -120,12 +120,18 @@ function suppExercise(){
 /**
  * @Description
  */
-function suppField(){
+function DelField(){
     $ExerciseTitle = GetExerciseById($_GET['idExercise']);
     DeleteField($_GET['idField']);
     $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
     require 'View/View_NewFields.php';
 }
+
+
+
+
+
+
 
 function takeExercise(){
 
