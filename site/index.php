@@ -47,13 +47,24 @@ try {
                 break;
             case 'CompleteExercise':
                 CompleteExercise();
-              break;
+                break;
+            case 'ClosedExercise':
+                ClosedExercise();
+                break;
+            case 'ResultExercise':
+                ResultAnswer();
+                break;
             case 'TakeExercise':
                 takeExercise();
                 break;
             case 'ManageExercise':
                 manageExercise();
-
+                break;
+            case 'DelExercise':
+                DelExercise();
+                break;
+            case 'DelField':
+                DelField();
                 break;
             default :
                 error();

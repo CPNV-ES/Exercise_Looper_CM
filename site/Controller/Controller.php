@@ -27,6 +27,17 @@ function NewExercise(){
     require 'View/View_NewExercise.php';
 }
 
+function manageExercise(){
+
+    $ExerciseBuilding = GetExerciseByState("Building");
+    $ExerciseAnswering = GetExerciseByState("Answering");
+    $ExerciseClosed = GetExerciseByState("Closed");
+
+
+    require 'View/View_ManageExercise.php';
+
+}
+
 /**
  * @Description
  */
@@ -77,25 +88,57 @@ function NewQuestion(){
 /**
  * @Description
  */
-function CompleteExercise(){
-    UpdateStateExercise($_GET['Id']);
-    homePage();
+function ResultAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    require 'View/View_Result.php';
 }
+
+/**
+ * @Description
+ */
+function CompleteExercise(){
+    UpdateStateExercise($_GET['id'], "Answering");
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function ClosedExercise(){
+    UpdateStateExercise($_GET['id'], "Closed");
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelExercise(){
+    DeleteExercise($_GET['id']);
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelField(){
+    $ExerciseTitle = GetExerciseById($_GET['idExercise']);
+    DeleteField($_GET['idField']);
+    $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    require 'View/View_NewFields.php';
+}
+
+
+
+
+
+
 
 function takeExercise(){
 
     require 'View/View_TakeExercise.php';
 }
 
-function manageExercise(){
 
-    $ExerciseAnswering = GetExerciseByState("Answering");
-    $ExerciseBuilding = GetExerciseByState("Building");
-    $ExerciseClosed = GetExerciseByState("Closed");
-
-    require 'View/View_ManageExercise.php';
-
-}
 
 //It could be useful to use that 'cause we can manage a lot of line and time.
 //Discussion in progress.

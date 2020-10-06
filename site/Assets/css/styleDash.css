@@ -6,6 +6,9 @@
 main {
   display: block; }
 
+.icon {
+  justify-content: right; }
+
 body {
   color: #606c76;
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -83,9 +86,6 @@ header.heading {
   width: 100%;
   z-index: 1; }
 
-header.home {
-  background-color: blueviolet; }
-
 header.dashbord {
   background-color: #26622b;
   height: 3rem; }
@@ -96,10 +96,15 @@ header.dashbord {
   color: white;
   font-size: 17px; }
 
-main, section {
-  display: block;
-  width: 50%;
-  position: absolute; }
+.container {
+  margin: 0 auto;
+  max-width: 112.0rem;
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 div.field, div.actions {
   margin-bottom: 10px;
