@@ -16,7 +16,7 @@ require "Controller/Controller.php";
 
 try {
     if (isset($_GET['Page']) or isset($_POST['Page'])) {
-        $Page = "Home";
+        $Page = "Accueil";
         if(isset($_GET['Page'])){
             $Page = $_GET['Page'];
         }elseif (isset($_POST['Page'])){
@@ -28,23 +28,43 @@ try {
                 homePage();
                 break;
             case 'NewExercise':
-                  NewExercise();
-                  break;
+                NewExercise();
+                break;
             case 'Fields':
                 NewFields();
+                break;
+            case 'FieldsEdit':
+                EditFields();
+                break;
+            case 'EditField':
+                EditOneField();
+                break;
+            case 'FieldsUpdate':
+                UpdateField();
                 break;
             case 'AddQuestion':
                 NewQuestion();
                 break;
             case 'CompleteExercise':
                 CompleteExercise();
-              break;
+                break;
+            case 'ClosedExercise':
+                ClosedExercise();
+                break;
+            case 'ResultExercise':
+                ResultAnswer();
+                break;
             case 'TakeExercise':
                 takeExercise();
                 break;
             case 'ManageExercise':
                 manageExercise();
-
+                break;
+            case 'DelExercise':
+                DelExercise();
+                break;
+            case 'DelField':
+                DelField();
                 break;
             default :
                 error();

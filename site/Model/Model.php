@@ -18,6 +18,71 @@ function getBD()
     return $connection;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseByState($State){
+
+    $connect = getBD();
+
+    $req = "SELECT exercises.id, Title FROM exercises WHERE State = '".$State."'";
+
+    $result = $connect->query($req);
+
+    return $result;
+
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetExerciseById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Title FROM exercises WHERE id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsByExercise($id){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE Exercises_id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetFieldsById($id){
+
+    $connect = getBD();
+
+    $req = "SELECT id, Label, ValueKind, Exercises_id FROM fields WHERE id = ".$id;
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
 function GetOneExercise($Title){
 
     $connect = getBD();
@@ -27,23 +92,13 @@ function GetOneExercise($Title){
     $result = $connect->query($req);
 
     return $result;
-
-
-
-
 }
 
-function GetAllExercise(){
-    // connexion à la BD exercicelooper
-    $connection = getBD();
-    // Création de la string pour la requête
-    $req = "SELECT * FROM exercises ";
-    // Exécution de la requete
 
-    $result = $connection->query($req);
 
-    return $result;
-}
+
+
+
 
 /**
  * @Description
@@ -78,18 +133,77 @@ function CreateFields($Id, $Title, $Value){
 
 
 
+
+
 /**
  * @Description
  * @return PDOStatement
  */
-function UpdateStateExercise($id){
+function UpdateStateExercise($id, $state){
     // connexion à la BD exercicelooper
     $connection = getBD();
 
     // Création de la string pour la requête
-    $req = "UPDATE exercises SET State = 'Answering' WHERE id = ".$id;
+    $req = "UPDATE exercises SET State = '$state' WHERE id = ".$id;
     // Exécution de la requete
 
     $connection->exec($req);
 }
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateOneField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE fields SET Label = '".$_POST['FieldTitle']."', ValueKind = '".$_POST['FieldValue']."' WHERE id = ".$id;
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+
+
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteExercise($id){
+    $connection = getBD();
+
+    $req = "DELETE FROM fields WHERE Exercises_id = $id";
+
+    $connection->exec($req);
+
+    $req = "DELETE FROM exercises WHERE id = $id";
+
+    $connection->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "DELETE FROM fields WHERE id = $id";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+
+
 

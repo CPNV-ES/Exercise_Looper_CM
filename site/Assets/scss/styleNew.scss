@@ -8,6 +8,7 @@
 $color: #9b4dca;
 
 .row{
+    
     h1{
         margin-top : 20px;
     }
@@ -32,33 +33,9 @@ hr.solid {
     border-top: 3px solid #bbb;
 }
 
-main {
-    display: block;
-}
-
-body {
-    color: #606c76;
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 1.6em;
-    font-weight: 3000;
-    letter-spacing: .01em;
-    line-height: 1.6;
-}
-
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .buttonNewFields{
     text-align: left;
     color: #9b4dca;
-}
-
-.button {
-    display: block;
-    padding-top: 10px;
 }
 
 .button > * {
@@ -74,50 +51,6 @@ body {
     font-size: 15px;
 }
 
-#buttonTake{
-    background-color: $color;
-}
-
-#buttonCreate{
-    background-color: #c87d0d;
-}
-
-#buttonManage{
-    background-color: #26622b;
-}
-
-.title{
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.title > h1{
-    font-size: 50px;
-}
-
-.title > h2{
-    font-size: 35px;
-}
-
-.miniLogo{
-    height: 50px;
-    width: 50px;
-}
-
-header.heading{
-    height: 5rem;
-    color: white;
-    display: block;
-    left: 0;
-    max-width: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
 
 header.home{
     background-color: blueviolet;
@@ -128,12 +61,6 @@ header.creating{
     height: 3rem;
 }
 
-.BannerTitle{
-    margin: auto;
-    margin-left: 2rem;
-    color: white;
-    font-size: 17px;
-}
 
 /* modifiable a partir de maintenant*/
 
@@ -153,15 +80,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 112.0rem;
-    padding: 0 2.0rem;
-    position: relative;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
+main.container{
+    margin-top: 4rem;
 }
 
 .container-exercise {
@@ -172,9 +93,9 @@ h1, h2, h3, h4, h5, h6 {
 
 
 form {
-color: #9b4dca;
+    color: #9b4dca;
+    width:100%
 }
-
 
 * {
     box-sizing: border-box;
@@ -192,7 +113,7 @@ color: #9b4dca;
 .row{
     display: flex;
     flex-wrap: wrap;
-
+    margin-top: 1rem;
 }
 
 .row:after{
@@ -205,30 +126,9 @@ color: #9b4dca;
 
 
 
+.container.column {
 
 
-
-
-
-.container.column{
-
-}
-
-main, section {
-    display: block;
-    width: 50%;
-    position: absolute;
-}
-
-div.field, div.actions {
-    margin-bottom: 10px;
-    display: block;
-}
-
-
-
-main.container {
-    margin-top: 5rem;
 }
 
 
@@ -248,16 +148,11 @@ label, legend {
 }
 
 input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     background-color: transparent;
     border: 0.1rem solid #d1d1d1;
     border-radius: .4rem;
-    box-shadow: none;
-    box-sizing: inherit;
-    height: 1rem;
     padding: .6rem 1.0rem;
     width: 100%;
+    margin-bottom: 10px;
 }
 

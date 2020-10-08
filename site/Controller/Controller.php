@@ -5,7 +5,13 @@
  * Date: 01/09/2020
  */
 
-//appel du fichier model.php pour pouvoir avoir accès au fonction dans le fichier
+?>
+
+    <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+    <Link href="../Assets/css/StyleGlobal.css" rel="stylesheet" type="text/css">
+<?php
+
+
 require "Model/Model.php";
 /**
  * @Description Permet d'accéder à l'accueil
@@ -22,11 +28,51 @@ function NewExercise(){
     require 'View/View_NewExercise.php';
 }
 
+function manageExercise(){
+
+    $ExerciseBuilding = GetExerciseByState("Building");
+    $ExerciseAnswering = GetExerciseByState("Answering");
+    $ExerciseClosed = GetExerciseByState("Closed");
+
+
+    require 'View/View_ManageExercise.php';
+
+}
+
 /**
  * @Description
  */
 function NewFields(){
     CreateExercise($_POST['Title']);
+    $idExercise = GetOneExercise($_POST['Title'])->fetch();
+    $ExerciseFields = GetFieldsByExercise($idExercise[0]);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function EditFields(){
+    $ExerciseTitle = GetExerciseById($_GET['id']);
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function EditOneField(){
+    $ExerciseField = GetFieldsById($_GET['idField']);
+    require 'View/View_EditField.php';
+}
+
+/**
+ * @Description
+ */
+function UpdateField(){
+    $ExerciseTitle = GetExerciseById($_POST['idExercise']);
+    UpdateOneField($_POST['idField']);
+    $ExerciseFields = GetFieldsByExercise($_POST['idExercise']);
     require 'View/View_NewFields.php';
 }
 
@@ -35,35 +81,73 @@ function NewFields(){
  */
 function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
+    $idExercise = GetOneExercise($_POST['Title'])->fetch();
+    $ExerciseFields = GetFieldsByExercise($idExercise[0]);
     require 'View/View_NewFields.php';
 }
 
 /**
  * @Description
  */
-function CompleteExercise(){
-    UpdateStateExercise($_GET['Id']);
-    homePage();
+function ResultAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    require 'View/View_Result.php';
 }
+
+/**
+ * @Description
+ */
+function CompleteExercise(){
+    UpdateStateExercise($_GET['id'], "Answering");
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function ClosedExercise(){
+    UpdateStateExercise($_GET['id'], "Closed");
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelExercise(){
+    DeleteExercise($_GET['id']);
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelField(){
+    $ExerciseTitle = GetExerciseById($_GET['idExercise']);
+    DeleteField($_GET['idField']);
+    $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    require 'View/View_NewFields.php';
+}
+
+
+
+
+
+
 
 function takeExercise(){
 
     require 'View/View_TakeExercise.php';
 }
 
-function manageExercise(){
-    require 'View/View_ManageExercise.php';
 
-}
 
 //It could be useful to use that 'cause we can manage a lot of line and time.
 //Discussion in progress.
 function openNewPage($url){
-
     require 'View/' . $url . '.php';
 }
 /**
- * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
+ * @Description Display erros if the webpaage searched doesn't exists
  */
 function error(){
     //affichage de la page d'erreur
