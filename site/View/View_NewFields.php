@@ -53,7 +53,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
         $id = $Exercise->fetch();
     }
 
-    $FieldExist=$ExerciseFields->fetch();
+    $FieldExist=$OneFieldExist->fetch();
 
     if(isset($_GET['Page'])){
 

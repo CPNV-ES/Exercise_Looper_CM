@@ -46,6 +46,7 @@ function NewFields(){
     CreateExercise($_POST['Title']);
     $idExercise = GetOneExercise($_POST['Title'])->fetch();
     $ExerciseFields = GetFieldsByExercise($idExercise[0]);
+    $OneFieldExist = GetFieldsByExercise($idExercise["id"]);
     require 'View/View_NewFields.php';
 }
 
@@ -83,6 +84,7 @@ function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
     $idExercise = GetOneExercise($_POST['Title'])->fetch();
     $ExerciseFields = GetFieldsByExercise($idExercise["id"]);
+    $OneFieldExist = GetFieldsByExercise($idExercise["id"]);
     require 'View/View_NewFields.php';
 }
 
