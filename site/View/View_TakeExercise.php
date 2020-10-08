@@ -5,7 +5,7 @@
  * Date: 01/09/2020
  */
 
-echo("Hello ! Here we are into the View_TakeExercise.php :3");
+    echo("Hello ! Here we are into the View_TakeExercise.php :3");
 
 ?>
 
