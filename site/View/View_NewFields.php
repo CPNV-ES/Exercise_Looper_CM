@@ -53,6 +53,8 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
         $id = $Exercise->fetch();
     }
 
+    $FieldExist=$ExerciseFields->fetch();
+
     if(isset($_GET['Page'])){
 
 
@@ -80,11 +82,11 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     </tbody>
                     </table>
                 <?php if(isset($_GET['id'])){ ?>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" <?php if($FieldExist != false){ ?>  href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>" <?php } ?>>
                     <i class="">Complete and be ready for answers</i>
                 </a>
                 <?php }elseif (isset($_GET['idExercise'])){ ?>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" <?php if($FieldExist != false){ ?>  href="index.php?Page=CompleteExercise&id=<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>" <?php } ?>>
                     <i class="">Complete and be ready for answers</i>
                 </a>
             <?php } ?>
@@ -99,7 +101,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <input type="hidden" name="Title" value="<?= $Title[0] ?>">
                     <div class="field">
                         <label for="exercise_title">Label</label>
-                        <input type="text" name="ExerciseTitle" id="exercise_title">
+                        <input type="text" name="ExerciseTitle" id="exercise_title" required>
                     </div>
                     <div class="field">
                         <label for="exercise_title">Value kind</label>
@@ -144,7 +146,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <?php } ?>
                     </tbody>
                 </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" <?php if($FieldExist != false){ ?> href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>" <?php } ?>>
                     <i class="">Complete and be ready for answers</i>
                 </a>
             </div>
@@ -159,7 +161,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <input type="hidden" name="Title" value="<?= isset($_POST['Title']) ? $_POST['Title'] : $Title[0] ?>">
                     <div class="field">
                         <label for="exercise_title">Label</label>
-                        <input type="text" name="ExerciseTitle" id="exercise_title">
+                        <input type="text" name="ExerciseTitle" id="exercise_title" required>
                     </div>
                     <div class="field">
                         <label for="exercise_title">Value kind</label>

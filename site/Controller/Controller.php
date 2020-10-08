@@ -82,7 +82,7 @@ function UpdateField(){
 function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
     $idExercise = GetOneExercise($_POST['Title'])->fetch();
-    $ExerciseFields = GetFieldsByExercise($idExercise[0]);
+    $ExerciseFields = GetFieldsByExercise($idExercise["id"]);
     require 'View/View_NewFields.php';
 }
 
