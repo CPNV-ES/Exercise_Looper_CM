@@ -15,7 +15,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>New Exercise</title>
-        <Link href="../Assets/css/styleNew.css" rel="stylesheet" type="text/css">
+
     </head>
 
     <body>
@@ -69,25 +69,31 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                     <tbody class="table">
                     <?php while($AllField=$ExerciseFields->fetch()){ ?>
                         <tr>
-                            <td><?= $AllField["Label"] ?></td>
-                            <td><?= $AllField["ValueKind"] ?></td>
+                            <td class="td-line"><?= $AllField["Label"] ?></td>
+                            <td class="td-line"><?= $AllField["ValueKind"] ?></td>
                             <td>
                                 <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit"></i></a>
-                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DeleteField&idField=<?= $AllField["id"] ?>"><i class="fa fa-trash"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
                     </tbody>
                     </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <?php if(isset($_GET['id'])){ ?>
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
+                <?php }elseif (isset($_GET['idExercise'])){ ?>
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>">
+                    <i class="">Complete and be ready for answers</i>
+                </a>
+            <?php } ?>
             </div>
 
             <div class="column"><h1>New Field</h1>
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="AddQuestion">
-                    <input type="hidden" name="IdExercise" value="<?= $_GET['id'] ?>">
+                    <input type="hidden" name="IdExercise" value="<?= isset($_GET['id']) ? $_GET['id'] : $_GET['idExercise'] ?>">
                     <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
                     <input type="hidden" name="Fields" value="<?= $Fields ?>">
                     <input type="hidden" name="Title" value="<?= $Title[0] ?>">
@@ -132,13 +138,13 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                             <td class="td-line"><?= $AllField["ValueKind"] ?></td>
                             <td>
                                 <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit"></i></a>
-                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DeleteField&idField=<?= $AllField["id"] ?>"><i class="fa fa-trash"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
                     </tbody>
                 </table>
-                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&Id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
+                <a data-confirm="Are you sure? You won't be able to further edit this exercise" class="button buttonNewFields" rel="nofollow" data-method="put" href="index.php?Page=CompleteExercise&id=<?= isset($id[0]) ? $id[0] : $_GET['id'] ?>">
                     <i class="">Complete and be ready for answers</i>
                 </a>
             </div>

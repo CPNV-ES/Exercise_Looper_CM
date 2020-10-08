@@ -26,7 +26,7 @@ function GetExerciseByState($State){
 
     $connect = getBD();
 
-    $req = "SELECT id, Title FROM exercises WHERE State = '".$State."'";
+    $req = "SELECT exercises.id, Title FROM exercises WHERE State = '".$State."'";
 
     $result = $connect->query($req);
 
@@ -79,10 +79,6 @@ function GetFieldsById($id){
     return $result;
 }
 
-
-
-
-
 /**
  * @Description
  * @return PDOStatement
@@ -98,21 +94,11 @@ function GetOneExercise($Title){
     return $result;
 }
 
-/**
- * @Description
- * @return PDOStatement
- */
-function GetAllExercise(){
-    // connexion à la BD exercicelooper
-    $connection = getBD();
-    // Création de la string pour la requête
-    $req = "SELECT * FROM exercises ";
-    // Exécution de la requete
 
-    $result = $connection->query($req);
 
-    return $result;
-}
+
+
+
 
 /**
  * @Description
@@ -147,16 +133,18 @@ function CreateFields($Id, $Title, $Value){
 
 
 
+
+
 /**
  * @Description
  * @return PDOStatement
  */
-function UpdateStateExercise($id){
+function UpdateStateExercise($id, $state){
     // connexion à la BD exercicelooper
     $connection = getBD();
 
     // Création de la string pour la requête
-    $req = "UPDATE exercises SET State = 'Answering' WHERE id = ".$id;
+    $req = "UPDATE exercises SET State = '$state' WHERE id = ".$id;
     // Exécution de la requete
 
     $connection->exec($req);
@@ -176,4 +164,46 @@ function UpdateOneField($id){
 
     $connection->exec($req);
 }
+
+
+
+
+
+
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteExercise($id){
+    $connection = getBD();
+
+    $req = "DELETE FROM fields WHERE Exercises_id = $id";
+
+    $connection->exec($req);
+
+    $req = "DELETE FROM exercises WHERE id = $id";
+
+    $connection->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function DeleteField($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "DELETE FROM fields WHERE id = $id";
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+
+
 
