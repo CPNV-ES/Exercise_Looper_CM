@@ -51,6 +51,11 @@ main.container {
   margin-top: 50px;
   position: relative; }
 
+.container-exercise {
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative; }
+
 form {
   color: #9b4dca;
   width: 100%; }
