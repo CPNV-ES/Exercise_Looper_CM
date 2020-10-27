@@ -4,7 +4,7 @@
  * User: Cyril Goldenschue
  * Date: 27/10/2020
  */
-
+// faire l'enregistrement en mettant toute les info dans une liste pour faire un while.
 ?>
 
 <html>
@@ -25,12 +25,13 @@
             <div class="containerField">
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="SaveAnswer">
-            <?php while ($Field=$ExerciseFields->fetch()){ ?>
+                    <input type="hidden" name="IdExercise" value="<?= $_POST['Id'] ?>">
+                    <?php while ($Field=$ExerciseFields->fetch()){ ?>
 
                         <a><?= $Field['Label'] ?></a>
-                        <input type="text" name="Answer: <?= $Field['Label'] ?>">
+                        <input type="text" name="Answer:<?=$Field['id']?>:<?= $Field['Label'] ?>">
 
-            <?php } ?>
+                    <?php } ?>
 
                 <div class="button">
                     <input style="width: 100%" type="submit" name="commit" value="TAKE IT">

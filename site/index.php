@@ -31,6 +31,9 @@ try {
             case 'Answering':
                 AnsweringPage();
                 break;
+            case 'SaveAnswer':
+                SaveAnswer();
+                break;
             case 'NewExercise':
                 NewExercise();
                 break;

@@ -106,13 +106,13 @@ function GetOneExercise($Title){
  */
 function CreateExercise($Title){
     // connexion à la BD exercicelooper
-    $connection = getBD();
+    $connect = getBD();
 
     // Création de la string pour la requête
     $req = "INSERT INTO exercises (Title) VALUES ('$Title')";
     // Exécution de la requete
 
-    $connection->exec($req);
+    $connect->exec($req);
 }
 
 /**
@@ -121,13 +121,50 @@ function CreateExercise($Title){
  */
 function CreateFields($Id, $Title, $Value){
     // connexion à la BD exercicelooper
-    $connection = getBD();
+    $connect = getBD();
 
     // Création de la string pour la requête
     $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$Title', '$Value', ".$Id.")";
     // Exécution de la requete
 
-    $connection->exec($req);
+    $connect->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function CreateAnswer($Response, $IdExercise, $IdTimeStamp, $IdField){
+    // connexion à la BD exercicelooper
+    $connect = getBD();
+
+    // Création de la string pour la requête
+    $req = "INSERT INTO answers (Response, Exercises_id, TimeStamp_id, Fields_id) VALUES ('$Response', $IdExercise, $IdTimeStamp, $IdField)";
+    // Exécution de la requete
+
+    $connect->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function CreateTimeStamp($Id){
+    // connexion à la BD exercicelooper
+    $connect = getBD();
+
+    // Création de la string pour la requête
+    $req = "INSERT INTO `timestamp` (Exercises_id ) VALUES ($Id)";
+    // Exécution de la requete
+
+    $connect->exec($req);
+
+    $req = "SELECT MAX(id) as MaxId FROM exercises";
+
+    $result = $connect->query($req);
+
+    return $result->fetch();
+
 }
 
 
