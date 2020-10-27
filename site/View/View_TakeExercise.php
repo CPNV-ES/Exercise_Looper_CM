@@ -24,4 +24,8 @@
             <span class="BannerTitle">Take an exercise</span>
         </section>
     </header>
+
+    <body>
+        <h1 id="takeEx-h1"> Salut tout le monde c'est moi, Cyril :D </h1>
+    </body>
 </html>
