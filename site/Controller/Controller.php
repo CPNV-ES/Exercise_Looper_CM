@@ -56,6 +56,7 @@ function NewFields(){
 function EditFields(){
     $ExerciseTitle = GetExerciseById($_GET['id']);
     $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $OneFieldExist = GetFieldsByExercise($_GET['id']);
     require 'View/View_NewFields.php';
 }
 
@@ -74,6 +75,7 @@ function UpdateField(){
     $ExerciseTitle = GetExerciseById($_POST['idExercise']);
     UpdateOneField($_POST['idField']);
     $ExerciseFields = GetFieldsByExercise($_POST['idExercise']);
+    $OneFieldExist = GetFieldsByExercise($_POST['idExercise']);
     require 'View/View_NewFields.php';
 }
 
@@ -127,6 +129,7 @@ function DelField(){
     $ExerciseTitle = GetExerciseById($_GET['idExercise']);
     DeleteField($_GET['idField']);
     $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    $OneFieldExist = GetFieldsByExercise($_GET['idExercise']);
     require 'View/View_NewFields.php';
 }
 
