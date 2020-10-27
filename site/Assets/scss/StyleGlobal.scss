@@ -101,6 +101,10 @@ header.heading{
   flex-wrap: wrap;
 }
 
+.icon-color{
+  color: $takeColor;
+}
+
 @import "style.scss";
 @import "styleNew.scss";
 @import "styleDash.scss";

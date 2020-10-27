@@ -46,10 +46,10 @@
                                 <td><?= $Building["Title"] ?></td>
                                 <td class="icon">
                                     <?php if($ExerciseId != false){ ?>
-                                    <a title="Be ready for answers" rel="nofollow" data-method="put" href="?Page=CompleteExercise&id=<?= $Building["id"] ?>"><i class="fa fa-comment"></i></a>
+                                    <a title="Be ready for answers" rel="nofollow" data-method="put" href="?Page=CompleteExercise&id=<?= $Building["id"] ?>"><i class="fa fa-comment icon-color"></i></a>
                                     <?php } ?>
-                                    <a title="Manage fields" href="?id=<?= $Building["id"] ?>&Page=FieldsEdit"><i class="fa fa-edit"></i></a>
-                                    <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelExercise&id=<?= $Building["id"] ?>"><i class="fa fa-trash"></i></a>
+                                    <a title="Manage fields" href="?id=<?= $Building["id"] ?>&Page=FieldsEdit"><i class="fa fa-edit icon-color"></i></a>
+                                    <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelExercise&id=<?= $Building["id"] ?>"><i class="fa fa-trash icon-color"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -66,8 +66,8 @@
                             <tr>
                                 <td><?= $Answering["Title"] ?></td>
                                 <td class="icon">
-                                    <a title="Show results" href="?Page=ResultExercise&id=<?= $Answering["id"] ?>"><i class="fa fa-chart-bar"></i></a>
-                                    <a title="Close" rel="nofollow" data-method="put" href="?Page=ClosedExercise&id=<?= $Answering["id"] ?>"><i class="fa fa-minus-circle"></i></a>
+                                    <a title="Show results" href="?Page=ResultExercise&id=<?= $Answering["id"] ?>"><i class="fa fa-chart-bar icon-color"></i></a>
+                                    <a title="Close" rel="nofollow" data-method="put" href="?Page=ClosedExercise&id=<?= $Answering["id"] ?>"><i class="fa fa-minus-circle icon-color"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -84,8 +84,8 @@
                         <tr>
                             <td><?= $Closed["Title"] ?></td>
                             <td class="icon">
-                                <a title="Manage fields" href="?Page=ResultExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-edit"></i></a>
-                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-trash"></i></a>
+                                <a title="Manage fields" href="?Page=ResultExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-edit icon-color"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-trash icon-color"></i></a>
                             </td>
                         </tr>
                         <?php } ?>

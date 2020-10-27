@@ -77,6 +77,9 @@ header.heading {
   flex-direction: row;
   flex-wrap: wrap; }
 
+.icon-color {
+  color: #9b4dca; }
+
 /**
  * Created by PhpStorm.
  * User: Mahieu Burnat
