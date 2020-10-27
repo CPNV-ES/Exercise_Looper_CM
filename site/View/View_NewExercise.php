@@ -26,10 +26,10 @@
             <h1>New Exercise</h1>
             <br>
             <form action="index.php" method="post">
-                <input type="hidden" name="Page" value="Fields">
+                <input type="hidden" name="Page" value="Fields" >
                 <div class="field">
                     <label for="exercise_title">Title</label>
-                    <input type="text" name="Title" id="exercise_title">
+                    <input type="text" name="Title" id="exercise_title" required>
                 </div>
                 <div class="button">
                     <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">

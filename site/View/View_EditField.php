@@ -30,7 +30,7 @@
                 <?php while($Infos=$ExerciseField->fetch()){ ?>
                 <div class="field">
                     <label for="exercise_title">Label</label>
-                    <input type="text" name="FieldTitle" value="<?= $Infos['Label'] ?>" >
+                    <input type="text" name="FieldTitle" value="<?= $Infos['Label'] ?>" required >
                 </div>
                 <div class="field">
                     <label for="exercise_title">Value kind</label>
