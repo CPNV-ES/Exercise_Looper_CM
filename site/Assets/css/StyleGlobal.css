@@ -1,4 +1,5 @@
 /**
+ * Global
  * Created by PhpStorm.
  * User: Mahieu Burnat & Cyril Goldenschue
  * Date: 06/10/2020
@@ -77,7 +78,16 @@ header.heading {
   flex-direction: row;
   flex-wrap: wrap; }
 
+main.container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+
 /**
+ * Style Home
  * Created by PhpStorm.
  * User: Mahieu Burnat
  * Date: 01/09/2020
@@ -117,6 +127,7 @@ header.heading {
   font-size: 15px; }
 
 /**
+ * Style New Exercise
  * Created by PhpStorm.
  * User: Mahieu Burnat & Cyril Goldenschue
  * Date: 01/09/2020
@@ -173,9 +184,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0rem;
   margin-top: 0; }
 
-main.container {
-  margin-top: 4rem; }
-
 .container-exercise {
   margin: 0 auto;
   margin-top: 50px;
@@ -221,20 +229,13 @@ input[type='email'], input[type='number'], input[type='password'], input[type='s
   margin-bottom: 10px; }
 
 /**
+ * Style Dashboard
  * Created by PhpStorm.
  * User: Cyril Goldenschue
  * Date: 29/09/2020
  */
 .icon {
   justify-content: right; }
-
-main.container {
-  margin-top: 5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
 
 .tableManage {
   width: 100%;
@@ -254,5 +255,22 @@ header.dashbord {
 div.field, div.actions {
   margin-bottom: 10px;
   display: block; }
+
+/**
+ * Style Take Exercise
+ * Created by PhpStorm.
+ * User: Mahieu Burnat & Cyril Goldenschue
+ * Date: 27/10/2020
+ */
+#takeEx-h1 {
+  color: white; }
+
+header.take {
+  background-color: #9b4dca;
+  height: 3rem; }
+
+.containerExercise {
+  width: 50%;
+  text-align: center; }
 
 /*# sourceMappingURL=StyleGlobal.css.map */

@@ -7,11 +7,6 @@
 ?>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Home Page</title>
-    </head>
-
     <body>
         <div class="banner">
             <div class="logo">

@@ -16,11 +16,6 @@
 ?>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>New Exercise</title>
-    </head>
-
     <body>
         <header class="heading dashbord">
             <section class="container">

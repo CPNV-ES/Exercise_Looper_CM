@@ -6,13 +6,17 @@
  */
 
 ?>
-
-    <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
-    <Link href="../Assets/css/StyleGlobal.css" rel="stylesheet" type="text/css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Exercice Looper</title>
+        <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+        <Link href="../Assets/css/StyleGlobal.css" rel="stylesheet" type="text/css">
+    </head>
 <?php
 
-
 require "Model/Model.php";
+
+
 /**
  * @Description Permet d'accéder à l'accueil
  */
@@ -28,16 +32,19 @@ function NewExercise(){
     require 'View/View_NewExercise.php';
 }
 
+/**
+ * @Description
+ */
 function manageExercise(){
 
     $ExerciseBuilding = GetExerciseByState("Building");
     $ExerciseAnswering = GetExerciseByState("Answering");
     $ExerciseClosed = GetExerciseByState("Closed");
 
-
     require 'View/View_ManageExercise.php';
-
 }
+
+
 
 /**
  * @Description
@@ -135,22 +142,30 @@ function DelField(){
 
 
 
-
-
-
-
+/**
+ * @Description
+ */
 function takeExercise(){
 
+    $ExerciseAnswering = GetExerciseByState("Answering");
     require 'View/View_TakeExercise.php';
 }
 
 
+/**
+ * @Description
+ */
+function AnsweringPage(){
 
-//It could be useful to use that 'cause we can manage a lot of line and time.
-//Discussion in progress.
-function openNewPage($url){
-    require 'View/' . $url . '.php';
+    $ExerciseFields = GetFieldsByExercise($_POST['Id']);
+    $ExerciseTitle = GetExerciseById($_POST['Id']);
+    require 'View/View_Answer.php';
 }
+
+
+
+
+
 /**
  * @Description Display erros if the webpaage searched doesn't exists
  */
