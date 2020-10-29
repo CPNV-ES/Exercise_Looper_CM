@@ -21,19 +21,37 @@
 
         <main class="container">
             <h1>Your take</h1>
-            <a>If you'd like to come back later to finish, simply submit it with blanks</a>
+            <a><?= isset($IdAnswers) ? "Bookmark this page, it's yours. You'll be able to come back later to finish." : "If you'd like to come back later to finish, simply submit it with blanks" ?></a>
             <div class="containerField">
-                <form action="<?= isset($IdAnswers) ? "Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
+                <form action="index.php<?= isset($IdAnswers) ? "?Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
                     <input type="hidden" name="Page" value="<?= isset($IdAnswers) ? "AnswerProgress" : "SaveAnswer" ?>">
-                    <input type="hidden" name="Id" value="<?= $_POST['Id'] ?>">
-                    <?php while ($Field=$ExerciseFields->fetch()){
+                    <?php if(isset($_POST['Id'])){ ?>
+                        <input type="hidden" name="Id" value="<?= isset($_POST['Id']) ? $_POST['Id'] : $_GET['id'] ?>">
+                    <?php }else{ ?>
+                        <input type="hidden" name="id" value="<?= isset($_POST['id']) ? $_POST['id'] : $_GET['id'] ?>">
+                    <?php } ?>
+                    <?php if(isset($AnswerInfos)){
+
+                        while ($Field=$AnswerInfos->fetch()){
+                            $label = str_replace(" ", "_",$Field['Label']);
+                            ?>
+
+                            <a><?= $Field['Label'] ?></a>
+                            <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" value="<?= $Field['Response'] ?>" >
+
+
+                            <?php
+                            //break;
+                        }
+                    }else{
+                        while ($Field=$ExerciseFields->fetch()){
                         $label = str_replace(" ", "_",$Field['Label']);
                         ?>
 
                         <a><?= $Field['Label'] ?></a>
                         <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" <?php if(isset($_POST['Answer:'.$Field['id'].':'.$label])){ ?> value="<?=$_POST['Answer:'.$Field['id'].':'.$label] ?>" <?php } ?>>
 
-                    <?php } ?>
+                    <?php } } ?>
 
                 <div class="button">
                     <input style="width: 100%" type="submit" name="commit" value="save">

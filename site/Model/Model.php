@@ -102,7 +102,7 @@ function GetAnswers($id){
 
     $connect = getBD();
 
-    $req = "SELECT Exercises_id, Response FROM answers INNER JOIN fields ON answers.Fields_id = fields.id WHERE TimeStamp_id = $id";
+    $req = "SELECT answers.Exercises_id, Response, Label, Fields_id as id FROM `answers` INNER JOIN `fields` ON answers.Fields_id = `fields`.id WHERE TimeStamp_id = $id";
 
     $result = $connect->query($req);
 
@@ -212,6 +212,22 @@ function UpdateOneField($id){
 
     // Création de la string pour la requête
     $req = "UPDATE fields SET Label = '".$_POST['FieldTitle']."', ValueKind = '".$_POST['FieldValue']."' WHERE id = ".$id;
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateAnswers($id, $idField, $answer){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE answers SET Response = '$answer' WHERE TimeStamp_id = $id AND Fields_id = $idField";
     // Exécution de la requete
 
     $connection->exec($req);
