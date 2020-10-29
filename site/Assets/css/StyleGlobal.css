@@ -270,7 +270,11 @@ header.take {
   height: 3rem; }
 
 .containerExercise {
-  width: 50%;
-  text-align: center; }
+  width: 70%;
+  text-align: center;
+  background: ghostwhite;
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-right: 20px; }
 
 /*# sourceMappingURL=StyleGlobal.css.map */
