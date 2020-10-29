@@ -23,18 +23,20 @@
             <h1>Your take</h1>
             <a>If you'd like to come back later to finish, simply submit it with blanks</a>
             <div class="containerField">
-                <form action="index.php" method="post">
-                    <input type="hidden" name="Page" value="SaveAnswer">
+                <form action="<?= isset($IdAnswers) ? "Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
+                    <input type="hidden" name="Page" value="<?= isset($IdAnswers) ? "AnswerProgress" : "SaveAnswer" ?>">
                     <input type="hidden" name="Id" value="<?= $_POST['Id'] ?>">
-                    <?php while ($Field=$ExerciseFields->fetch()){ ?>
+                    <?php while ($Field=$ExerciseFields->fetch()){
+                        $label = str_replace(" ", "_",$Field['Label']);
+                        ?>
 
                         <a><?= $Field['Label'] ?></a>
-                        <input type="text" name="Answer:<?=$Field['id']?>">
+                        <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" <?php if(isset($_POST['Answer:'.$Field['id'].':'.$label])){ ?> value="<?=$_POST['Answer:'.$Field['id'].':'.$label] ?>" <?php } ?>>
 
                     <?php } ?>
 
                 <div class="button">
-                    <input style="width: 100%" type="submit" name="commit" value="TAKE IT">
+                    <input style="width: 100%" type="submit" name="commit" value="save">
                 </div>
                 </form>
             </div>

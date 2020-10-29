@@ -34,6 +34,9 @@ try {
             case 'SaveAnswer':
                 SaveAnswer();
                 break;
+            case 'AnswerProgress':
+                ProgressAnswer();
+                break;
             case 'NewExercise':
                 NewExercise();
                 break;

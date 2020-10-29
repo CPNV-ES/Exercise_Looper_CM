@@ -177,6 +177,27 @@ function SaveAnswer(){
         }
     }
 
+    $IdAnswers = $TimeStamp;
+    $ExerciseFields = GetFieldsByExercise($_POST['Id']);
+    $ExerciseTitle = GetExerciseById($_POST['Id']);
+    require 'View/View_Answer.php';
+}
+
+/**
+ * @Description
+ */
+function ProgressAnswer(){
+
+
+    foreach($_POST as $name_post => $answer) {
+
+        $result = explode(":", $name_post);
+        if ($result[0] == "Answer") {
+            CreateAnswer($answer, $_POST['Id'], $TimeStamp, $result[1]);
+        }
+    }
+
+    $IdAnswers = $_POST['id'];
     $ExerciseFields = GetFieldsByExercise($_POST['Id']);
     $ExerciseTitle = GetExerciseById($_POST['Id']);
     require 'View/View_Answer.php';

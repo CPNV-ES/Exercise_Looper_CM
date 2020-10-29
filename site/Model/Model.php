@@ -94,6 +94,21 @@ function GetOneExercise($Title){
     return $result;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetAnswers($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Exercises_id, Response FROM answers INNER JOIN fields ON answers.Fields_id = fields.id WHERE TimeStamp_id = $id";
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
 
 
 
