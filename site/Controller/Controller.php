@@ -166,9 +166,19 @@ function AnsweringPage(){
  * @Description
  */
 function SaveAnswer(){
-    CreateAnswer($Response, $_POST['IdExercise'], CreateTimeStamp($_POST['IdExercise']), $IdField);
-    //$ExerciseFields = GetFieldsByExercise($_POST['Id']);
-    //$ExerciseTitle = GetExerciseById($_POST['Id']);
+
+    $TimeStamp = CreateTimeStamp($_POST['Id']);
+
+    foreach($_POST as $name_post => $answer) {
+
+        $result = explode(":", $name_post);
+        if ($result[0] == "Answer") {
+            CreateAnswer($answer, $_POST['Id'], $TimeStamp, $result[1]);
+        }
+    }
+
+    $ExerciseFields = GetFieldsByExercise($_POST['Id']);
+    $ExerciseTitle = GetExerciseById($_POST['Id']);
     require 'View/View_Answer.php';
 }
 

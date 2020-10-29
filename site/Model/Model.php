@@ -159,11 +159,11 @@ function CreateTimeStamp($Id){
 
     $connect->exec($req);
 
-    $req = "SELECT MAX(id) as MaxId FROM exercises";
+    $req = "SELECT id from `timestamp` WHERE `TimeStamp` = (SELECT MAX(`TimeStamp`) FROM `timestamp`)";
 
     $result = $connect->query($req);
 
-    return $result->fetch();
+    return $result->fetch()['id'];
 
 }
 

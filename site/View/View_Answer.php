@@ -25,11 +25,11 @@
             <div class="containerField">
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="SaveAnswer">
-                    <input type="hidden" name="IdExercise" value="<?= $_POST['Id'] ?>">
+                    <input type="hidden" name="Id" value="<?= $_POST['Id'] ?>">
                     <?php while ($Field=$ExerciseFields->fetch()){ ?>
 
                         <a><?= $Field['Label'] ?></a>
-                        <input type="text" name="Answer:<?=$Field['id']?>:<?= $Field['Label'] ?>">
+                        <input type="text" name="Answer:<?=$Field['id']?>">
 
                     <?php } ?>
 
