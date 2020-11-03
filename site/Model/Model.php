@@ -167,9 +167,9 @@ function CreateAnswer($Response, $IdExercise, $IdTimeStamp, $IdField){
 function CreateTimeStamp($Id){
     // connexion à la BD exercicelooper
     $connect = getBD();
-
+    $date = date('Y-m-d H:i:s');
     // Création de la string pour la requête
-    $req = "INSERT INTO `timestamp` (Exercises_id ) VALUES ($Id)";
+    $req = "INSERT INTO `timestamp` (Exercises_id, `TimeStamp` ) VALUES ($Id, '$date')";
     // Exécution de la requete
 
     $connect->exec($req);
