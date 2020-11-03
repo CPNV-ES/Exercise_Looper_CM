@@ -100,14 +100,6 @@ function NewQuestion(){
 /**
  * @Description
  */
-function ResultAnswer(){
-    $ExerciseFields = GetFieldsByExercise($_GET['id']);
-    require 'View/View_Result.php';
-}
-
-/**
- * @Description
- */
 function CompleteExercise(){
     UpdateStateExercise($_GET['id'], "Answering");
     manageExercise();
@@ -203,6 +195,20 @@ function ProgressAnswer(){
     require 'View/View_Answer.php';
 }
 
+
+
+
+
+
+
+/**
+ * @Description
+ */
+function ResultAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $Answer = GetAllAnswer($_GET['id']);
+    require 'View/View_Result.php';
+}
 
 
 

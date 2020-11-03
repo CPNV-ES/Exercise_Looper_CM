@@ -110,6 +110,22 @@ function GetAnswers($id){
 }
 
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetAllAnswer($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "SELECT `TimeStamp`, ValueKind, Label, Response FROM answers INNER JOIN `fields` ON answers.Fields_id = `fields`.id INNER JOIN `timestamp` ON answers.TimeStamp_id = `timestamp`.id WHERE answers.Exercises_id = $id";
+    // Exécution de la requete
+
+    $result = $connection->query($req);
+
+    return $result;
+}
 
 
 
@@ -270,6 +286,7 @@ function DeleteField($id){
 
     $connection->exec($req);
 }
+
 
 
 
