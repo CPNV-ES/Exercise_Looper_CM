@@ -86,6 +86,9 @@ main.container {
   flex-wrap: wrap;
   justify-content: center; }
 
+.icon-color {
+  color: #9b4dca; }
+
 /**
  * Style Home
  * Created by PhpStorm.
