@@ -209,6 +209,22 @@ function ResultAnswer(){
     $AllAnswer = GetAllAnswer($_GET['id']);
     require 'View/View_Result.php';
 }
+/**
+ * @Description
+ */
+function DetailsByField(){
+    $labelField = GetFieldsById($_GET['id'])->fetch()['Label'];
+    $Answers = GetAnswersByField($_GET['id']);
+    require 'View/View_ResultByField.php';
+}
+/**
+ * @Description
+ */
+function DetailsByAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $AllAnswer = GetAllAnswer($_GET['id']);
+    require 'View/View_Result.php';
+}
 
 
 

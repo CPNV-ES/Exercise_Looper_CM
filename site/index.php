@@ -66,6 +66,12 @@ try {
             case 'ResultExercise':
                 ResultAnswer();
                 break;
+            case 'DetailsByField':
+                DetailsByField();
+                break;
+            case 'DetailsByAnswer':
+                DetailsByAnswer();
+                break;
             case 'TakeExercise':
                 takeExercise();
                 break;

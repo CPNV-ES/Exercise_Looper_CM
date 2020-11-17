@@ -109,6 +109,21 @@ function GetAnswers($id){
     return $result;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetAnswersByField($id){
+
+    $connect = getBD();
+
+    $req = "SELECT `TimeStamp`, answers.Exercises_id, Response, Fields_id as id FROM `answers`INNER JOIN `fields` ON answers.Fields_id = `fields`.id INNER JOIN `timestamp` ON answers.TimeStamp_id = `timestamp`.id WHERE Fields_id = $id";
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
 
 /**
  * @Description
