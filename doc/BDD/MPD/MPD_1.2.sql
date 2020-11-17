@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `ExerciceLooper`.`Fields` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Label` VARCHAR(255) NOT NULL,
   `ValueKind` ENUM('Single_line_text', 'List_of_single_lines', 'Multi-line_text') NOT NULL,
-  `Questionnaires_id` INT NOT NULL,
+  `Exercises_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_Questions_Questionnaires`
-    FOREIGN KEY (`Questionnaires_id`)
+  CONSTRAINT `fk_Fields_Exercises1`
+    FOREIGN KEY (`Exercises_id`)
     REFERENCES `ExerciceLooper`.`Exercises` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -68,17 +68,23 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ExerciceLooper`.`Answers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Response` TEXT NULL,
-  `Questions_id` INT NOT NULL,
+  `Exercises_id` INT NOT NULL,
   `TimeStamp_id` INT NOT NULL,
+  `Fields_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_Answers_Questions1`
-    FOREIGN KEY (`Questions_id`)
-    REFERENCES `ExerciceLooper`.`Fields` (`id`)
+  CONSTRAINT `fk_Answers_Exercises1`
+    FOREIGN KEY (`Exercises_id`)
+    REFERENCES `ExerciceLooper`.`Exercises` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Answers_TimeStamp1`
     FOREIGN KEY (`TimeStamp_id`)
     REFERENCES `ExerciceLooper`.`TimeStamp` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    CONSTRAINT `fk_Answers_Fields1`
+    FOREIGN KEY (`Fields_id`)
+    REFERENCES `ExerciceLooper`.`Fields` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

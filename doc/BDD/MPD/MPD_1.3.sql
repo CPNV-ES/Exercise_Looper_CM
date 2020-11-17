@@ -68,9 +68,15 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ExerciceLooper`.`Answers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Response` TEXT NULL,
+  `Exercises_id` INT NOT NULL,
   `Fields_id` INT NOT NULL,
   `TimeStamp_id` INT NOT NULL,
   PRIMARY KEY (`id`),
+  CONSTRAINT `fk_Answers_Exercises1`
+    FOREIGN KEY (`Exercises_id`)
+    REFERENCES `ExerciceLooper`.`Exercises` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_Answers_Questions1`
     FOREIGN KEY (`Fields_id`)
     REFERENCES `ExerciceLooper`.`Fields` (`id`)

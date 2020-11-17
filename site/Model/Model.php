@@ -94,6 +94,21 @@ function GetOneExercise($Title){
     return $result;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetAnswers($id){
+
+    $connect = getBD();
+
+    $req = "SELECT answers.Exercises_id, Response, Label, Fields_id as id FROM `answers` INNER JOIN `fields` ON answers.Fields_id = `fields`.id WHERE TimeStamp_id = $id";
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
 
 
 
@@ -106,13 +121,13 @@ function GetOneExercise($Title){
  */
 function CreateExercise($Title){
     // connexion à la BD exercicelooper
-    $connection = getBD();
+    $connect = getBD();
 
     // Création de la string pour la requête
     $req = "INSERT INTO exercises (Title) VALUES ('$Title')";
     // Exécution de la requete
 
-    $connection->exec($req);
+    $connect->exec($req);
 }
 
 /**
@@ -121,13 +136,50 @@ function CreateExercise($Title){
  */
 function CreateFields($Id, $Title, $Value){
     // connexion à la BD exercicelooper
-    $connection = getBD();
+    $connect = getBD();
 
     // Création de la string pour la requête
     $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$Title', '$Value', ".$Id.")";
     // Exécution de la requete
 
-    $connection->exec($req);
+    $connect->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function CreateAnswer($Response, $IdExercise, $IdTimeStamp, $IdField){
+    // connexion à la BD exercicelooper
+    $connect = getBD();
+
+    // Création de la string pour la requête
+    $req = "INSERT INTO answers (Response, Exercises_id, TimeStamp_id, Fields_id) VALUES ('$Response', $IdExercise, $IdTimeStamp, $IdField)";
+    // Exécution de la requete
+
+    $connect->exec($req);
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function CreateTimeStamp($Id){
+    // connexion à la BD exercicelooper
+    $connect = getBD();
+    $date = date('Y-m-d H:i:s');
+    // Création de la string pour la requête
+    $req = "INSERT INTO `timestamp` (Exercises_id, `TimeStamp` ) VALUES ($Id, '$date')";
+    // Exécution de la requete
+
+    $connect->exec($req);
+
+    $req = "SELECT id from `timestamp` WHERE `TimeStamp` = (SELECT MAX(`TimeStamp`) FROM `timestamp`)";
+
+    $result = $connect->query($req);
+
+    return $result->fetch()['id'];
+
 }
 
 
@@ -160,6 +212,22 @@ function UpdateOneField($id){
 
     // Création de la string pour la requête
     $req = "UPDATE fields SET Label = '".$_POST['FieldTitle']."', ValueKind = '".$_POST['FieldValue']."' WHERE id = ".$id;
+    // Exécution de la requete
+
+    $connection->exec($req);
+}
+
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function UpdateAnswers($id, $idField, $answer){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "UPDATE answers SET Response = '$answer' WHERE TimeStamp_id = $id AND Fields_id = $idField";
     // Exécution de la requete
 
     $connection->exec($req);

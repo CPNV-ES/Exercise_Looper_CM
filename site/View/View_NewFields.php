@@ -12,12 +12,6 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
 ?>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>New Exercise</title>
-
-    </head>
-
     <body>
         <header class="heading creating">
             <section class="container">
@@ -172,7 +166,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                         </select>
                     </div>
                     <div class="actions button">
-                        <input type="submit" name="commit" value="Create Exercise" data-disable-with="Create Exercise">
+                        <input type="submit" name="commit" value="Create Question" data-disable-with="Create Question">
                     </div>
                 </form>
             </div>

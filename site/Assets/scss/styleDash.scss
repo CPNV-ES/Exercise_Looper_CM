@@ -1,4 +1,5 @@
 /**
+ * Style Dashboard
  * Created by PhpStorm.
  * User: Cyril Goldenschue
  * Date: 29/09/2020
@@ -12,15 +13,6 @@ $dashbordColor: #26622b;
 
 .icon {
     justify-content: right;
-}
-
-main.container {
-    margin-top: 5rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .tableManage{

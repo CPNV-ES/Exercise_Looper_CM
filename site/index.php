@@ -24,8 +24,18 @@ try {
         }
         // Sélection de l'action passée par l'URL
         switch ($Page) {
+            //reception
             case 'Accueil':
                 homePage();
+                break;
+            case 'Answering':
+                AnsweringPage();
+                break;
+            case 'SaveAnswer':
+                SaveAnswer();
+                break;
+            case 'AnswerProgress':
+                ProgressAnswer();
                 break;
             case 'NewExercise':
                 NewExercise();
