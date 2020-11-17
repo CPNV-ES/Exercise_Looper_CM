@@ -124,6 +124,37 @@ function GetAnswersByField($id){
     return $result;
 }
 
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetAnswersByAnswer($id){
+
+    $connect = getBD();
+
+    $req = "SELECT Response, Label, Fields_id as id FROM `answers`INNER JOIN `fields` ON answers.Fields_id = `fields`.id INNER JOIN `timestamp` ON answers.TimeStamp_id = `timestamp`.id WHERE TimeStamp_id = $id";
+
+    $result = $connect->query($req);
+
+    return $result;
+}
+
+/**
+ * @Description
+ * @return PDOStatement
+ */
+function GetTimestamp($id){
+    // connexion à la BD exercicelooper
+    $connection = getBD();
+
+    // Création de la string pour la requête
+    $req = "SELECT `TimeStamp` FROM `timestamp` WHERE id = $id";
+    // Exécution de la requete
+
+    $result = $connection->query($req);
+
+    return $result;
+}
 
 /**
  * @Description
@@ -134,7 +165,7 @@ function GetAllAnswer($id){
     $connection = getBD();
 
     // Création de la string pour la requête
-    $req = "SELECT `TimeStamp`, ValueKind, Label, Response, Fields_id, answers.id FROM answers INNER JOIN `fields` ON answers.Fields_id = `fields`.id INNER JOIN `timestamp` ON answers.TimeStamp_id = `timestamp`.id WHERE answers.Exercises_id = $id";
+    $req = "SELECT `TimeStamp`, TimeStamp_id, ValueKind, Label, Response, Fields_id, answers.id FROM answers INNER JOIN `fields` ON answers.Fields_id = `fields`.id INNER JOIN `timestamp` ON answers.TimeStamp_id = `timestamp`.id WHERE answers.Exercises_id = $id";
     // Exécution de la requete
 
     $result = $connection->query($req);

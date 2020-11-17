@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+ * Created by PhpStorm.
+ * User: Cyril Goldenschue
+ * Date: 10/11/2020
+ */
 
 ?>
 <html>
@@ -23,7 +27,7 @@
             <?php }  $oldTimestamp = "";
             while ($Answer = $AllAnswer->fetch()){  $Timestamp = $Answer["TimeStamp"]; if($Timestamp != $oldTimestamp){   ?>
                 <tr>
-                    <td><a href="?Page=DetailsByAnswer&id=<?= $Answer['id'] ?>"><?= $Answer["TimeStamp"] ?></a></td>
+                    <td><a href="?Page=DetailsByAnswer&id=<?= $Answer['TimeStamp_id'] ?>"><?= $Answer["TimeStamp"] ?></a></td>
                     <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
             <?php $oldTimestamp = $Timestamp; }
                 else

@@ -221,9 +221,9 @@ function DetailsByField(){
  * @Description
  */
 function DetailsByAnswer(){
-    $ExerciseFields = GetFieldsByExercise($_GET['id']);
-    $AllAnswer = GetAllAnswer($_GET['id']);
-    require 'View/View_Result.php';
+    $TimeStamp = GetTimestamp($_GET['id'])->fetch()['TimeStamp'];
+    $Answers = GetAnswersByAnswer($_GET['id']);
+    require 'View/View_ResultByAnswer.php';
 }
 
 
