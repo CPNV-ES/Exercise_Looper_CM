@@ -20,8 +20,12 @@
         </header>
 
         <main class="container">
+            <div class="containerField">
             <h1>Your take</h1>
-            <a><?= isset($IdAnswers) ? "Bookmark this page, it's yours. You'll be able to come back later to finish." : "If you'd like to come back later to finish, simply submit it with blanks" ?></a>
+                <p>
+                    <?= isset($IdAnswers) ? "Bookmark this page, it's yours. You'll be able to come back later to finish." : "If you'd like to come back later to finish, simply submit it with blanks" ?>
+                </p>
+            </div>
             <div class="containerField">
                 <form action="index.php<?= isset($IdAnswers) ? "?Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
                     <input type="hidden" name="Page" value="<?= isset($IdAnswers) ? "AnswerProgress" : "SaveAnswer" ?>">

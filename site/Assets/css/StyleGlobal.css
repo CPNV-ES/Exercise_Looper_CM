@@ -5,56 +5,68 @@
  * Date: 06/10/2020
  */
 main {
-  display: block; }
+  display: block;
+}
 
 body {
   color: #606c76;
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1.6em;
   font-weight: 3000;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   line-height: 1.6;
-  margin: 0; }
+  margin: 0;
+}
 
 .logo {
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .button {
   display: block;
   text-align: center;
-  padding-top: 10px; }
+  padding-top: 10px;
+}
 
 #buttonTake {
-  background-color: #9b4dca; }
+  background-color: #9b4dca;
+}
 
 #buttonCreate {
-  background-color: #c87d0d; }
+  background-color: #c87d0d;
+}
 
 #buttonManage {
-  background-color: #26622b; }
+  background-color: #26622b;
+}
 
 .title {
   color: white;
   text-align: center;
   font-size: 15px;
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 .title h1 {
-  font-size: 50px; }
+  font-size: 50px;
+}
 .title h2 {
-  font-size: 35px; }
+  font-size: 35px;
+}
 
 .miniLogo {
   height: 50px;
-  width: 50px; }
+  width: 50px;
+}
 
 .BannerTitle {
   margin: auto;
   margin-left: 2rem;
   color: white;
-  font-size: 17px; }
+  font-size: 17px;
+}
 
 header.heading {
   height: 5rem;
@@ -66,17 +78,19 @@ header.heading {
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .container {
   margin: 0 auto;
-  max-width: 112.0rem;
+  max-width: 112rem;
   padding: 0 15px;
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 main.container {
   margin-top: 5rem;
@@ -84,10 +98,12 @@ main.container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .icon-color {
-  color: #9b4dca; }
+  color: #9b4dca;
+}
 
 /**
  * Style Home
@@ -96,10 +112,12 @@ main.container {
  * Date: 01/09/2020
  */
 .title > * {
-  margin: 0; }
+  margin: 0;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .banner {
   background-color: #9b4dca;
@@ -107,14 +125,16 @@ main.container {
   color: white;
   width: 100%;
   text-align: center;
-  padding: 50px; }
+  padding: 50px;
+}
 
 .container-button {
   text-align: center;
   padding-top: 15px;
   justify-content: center;
   flex-wrap: wrap;
-  display: flex; }
+  display: flex;
+}
 
 .container-button > * {
   width: 300px;
@@ -127,7 +147,8 @@ main.container {
   padding-right: 40px;
   margin: 10px;
   color: white;
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 /**
  * Style New Exercise
@@ -136,22 +157,28 @@ main.container {
  * Date: 01/09/2020
  */
 .row h1 {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 .row th {
   color: #9b4dca;
-  text-align: center; }
+  text-align: center;
+}
 .row tr {
-  text-align: left; }
+  text-align: left;
+}
 .row tr > .td-line {
   border-bottom: 1px solid #bbb;
-  padding: 0.5rem 1.5rem; }
+  padding: 0.5rem 1.5rem;
+}
 
 hr.solid {
-  border-top: 3px solid #bbb; }
+  border-top: 3px solid #bbb;
+}
 
 .buttonNewFields {
   text-align: left;
-  color: #9b4dca; }
+  color: #9b4dca;
+}
 
 .button > * {
   background-color: #9b4dca;
@@ -163,14 +190,17 @@ hr.solid {
   padding-right: 40px;
   margin: 10px;
   color: white;
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 header.home {
-  background-color: blueviolet; }
+  background-color: blueviolet;
+}
 
 header.creating {
   background-color: #e0a458;
-  height: 3rem; }
+  height: 3rem;
+}
 
 /* modifiable a partir de maintenant*/
 h1 {
@@ -180,56 +210,66 @@ h1 {
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-weight: 300; }
+  font-weight: 300;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -.1rem;
+  letter-spacing: -0.1rem;
   margin-bottom: 0rem;
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 .container-exercise {
   margin: 0 auto;
   margin-top: 50px;
-  position: relative; }
+  position: relative;
+}
 
 form {
   color: #9b4dca;
-  width: 100%; }
+  width: 100%;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 50%;
   min-width: 500px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 /* Clear floats after the columns */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+}
 
 .row:after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 label, legend {
   display: block;
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: .5rem; }
+  margin-bottom: 0.5rem;
+}
 
-input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
+input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], textarea, select {
   background-color: transparent;
   border: 0.1rem solid #d1d1d1;
-  border-radius: .4rem;
-  padding: .6rem 1.0rem;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1rem;
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 /**
  * Style Dashboard
@@ -238,26 +278,31 @@ input[type='email'], input[type='number'], input[type='password'], input[type='s
  * Date: 29/09/2020
  */
 .icon {
-  justify-content: right; }
+  justify-content: right;
+}
 
 .tableManage {
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 .tableManage > .column {
   width: auto;
   margin-bottom: 50px;
-  margin-left: 50px; }
+  margin-left: 50px;
+}
 
 header.dashbord {
   background-color: #26622b;
-  height: 3rem; }
+  height: 3rem;
+}
 
 div.field, div.actions {
   margin-bottom: 10px;
-  display: block; }
+  display: block;
+}
 
 /**
  * Style Take Exercise
@@ -266,11 +311,13 @@ div.field, div.actions {
  * Date: 27/10/2020
  */
 #takeEx-h1 {
-  color: white; }
+  color: white;
+}
 
 header.take {
   background-color: #9b4dca;
-  height: 3rem; }
+  height: 3rem;
+}
 
 .containerExercise {
   width: 70%;
@@ -278,6 +325,17 @@ header.take {
   background: ghostwhite;
   margin-top: 15px;
   padding-top: 15px;
-  padding-right: 20px; }
+  padding-right: 20px;
+}
+
+.containerField a {
+  color: #525151;
+}
+.containerField input {
+  margin-left: 0px;
+}
+.containerField h1 {
+  text-align-last: center;
+}
 
 /*# sourceMappingURL=StyleGlobal.css.map */
