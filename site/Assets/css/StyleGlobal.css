@@ -328,7 +328,6 @@ header.take {
   padding-right: 20px;
 }
 
-
 .ViewResultContainer {
   margin-top: 60px;
   width: 100%;
@@ -357,6 +356,7 @@ header.take {
 .h1-ResultContainer {
   margin-top: 55px;
   margin-left: 25px;
+}
 
 .containerField a {
   color: #525151;
@@ -366,7 +366,6 @@ header.take {
 }
 .containerField h1 {
   text-align-last: center;
-
 }
 
 /*# sourceMappingURL=StyleGlobal.css.map */
