@@ -55,12 +55,15 @@
                         ?>
 
                         <a><?= $Field['Label'] ?></a>
+                            <?php if($Field['ValueKind'] == "Single_line_text"){ ?>
                         <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" <?php if(isset($_POST['Answer:'.$Field['id'].':'.$label])){ ?> value="<?=$_POST['Answer:'.$Field['id'].':'.$label] ?>" <?php } ?>>
+                            <?php }else { ?>
+                                <textarea name="Answer:<?=$Field['id']?>:<?=$label?>" ></textarea>
 
-                    <?php } } ?>
+                    <?php } } } ?>
 
                 <div class="button">
-                    <input style="width: 100%" type="submit" name="commit" value="save">
+                    <input style="width: 100%" type="submit" name="commit" value="save" form="">
                 </div>
                 </form>
             </div>
