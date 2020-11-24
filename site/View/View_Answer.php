@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Cyril Goldenschue
@@ -19,7 +20,7 @@
             </section>
         </header>
 
-        <main class="container">
+        <main class="containerAnswer">
             <div class="containerField">
             <h1>Your take</h1>
                 <p>

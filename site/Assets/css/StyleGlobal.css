@@ -368,4 +368,11 @@ header.take {
   text-align-last: center;
 }
 
+.containerAnswer {
+  margin: 50px 200px;
+}
+.containerAnswer textarea {
+  min-width: 1500px;
+}
+
 /*# sourceMappingURL=StyleGlobal.css.map */
