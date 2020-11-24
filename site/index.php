@@ -5,6 +5,8 @@
  * Date: 01/09/2020
  */
 
+//phpinfo();
+
 //Display Errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -63,6 +65,12 @@ try {
                 break;
             case 'ResultExercise':
                 ResultAnswer();
+                break;
+            case 'DetailsByField':
+                DetailsByField();
+                break;
+            case 'DetailsByAnswer':
+                DetailsByAnswer();
                 break;
             case 'TakeExercise':
                 takeExercise();

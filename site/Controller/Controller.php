@@ -100,14 +100,6 @@ function NewQuestion(){
 /**
  * @Description
  */
-function ResultAnswer(){
-    $ExerciseFields = GetFieldsByExercise($_GET['id']);
-    require 'View/View_Result.php';
-}
-
-/**
- * @Description
- */
 function CompleteExercise(){
     UpdateStateExercise($_GET['id'], "Answering");
     manageExercise();
@@ -203,6 +195,36 @@ function ProgressAnswer(){
     require 'View/View_Answer.php';
 }
 
+
+
+
+
+
+
+/**
+ * @Description
+ */
+function ResultAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $AllAnswer = GetAllAnswer($_GET['id']);
+    require 'View/View_Result.php';
+}
+/**
+ * @Description
+ */
+function DetailsByField(){
+    $labelField = GetFieldsById($_GET['id'])->fetch()['Label'];
+    $Answers = GetAnswersByField($_GET['id']);
+    require 'View/View_ResultByField.php';
+}
+/**
+ * @Description
+ */
+function DetailsByAnswer(){
+    $TimeStamp = GetTimestamp($_GET['id'])->fetch()['TimeStamp'];
+    $Answers = GetAnswersByAnswer($_GET['id']);
+    require 'View/View_ResultByAnswer.php';
+}
 
 
 

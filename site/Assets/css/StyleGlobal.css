@@ -328,6 +328,36 @@ header.take {
   padding-right: 20px;
 }
 
+
+.ViewResultContainer {
+  margin-top: 60px;
+  width: 100%;
+}
+.ViewResultContainer div {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+.ViewResultContainer div th {
+  text-align: left;
+  width: 200px;
+}
+.ViewResultContainer div tr a {
+  text-decoration: none;
+}
+.ViewResultContainer div tr i {
+  color: #26622b;
+}
+
+.answerTitles dt {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.h1-ResultContainer {
+  margin-top: 55px;
+  margin-left: 25px;
+
 .containerField a {
   color: #525151;
 }
@@ -336,6 +366,7 @@ header.take {
 }
 .containerField h1 {
   text-align-last: center;
+
 }
 
 /*# sourceMappingURL=StyleGlobal.css.map */
