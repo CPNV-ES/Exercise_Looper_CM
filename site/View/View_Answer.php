@@ -27,7 +27,7 @@
                 </p>
             </div>
             <div class="containerField">
-                <form action="index.php?Page=AnswerProgress <?= isset($IdAnswers) ? "&id=".$IdAnswers : "" ?>" method="post">
+                <form action="index.php<?= isset($IdAnswers) ? "?Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
                     <input type="hidden" name="Page" value="<?= isset($IdAnswers) ? "AnswerProgress" : "SaveAnswer" ?>">
                     <?php if(isset($_POST['Id'])){ ?>
                         <input type="hidden" name="Id" value="<?= isset($_POST['Id']) ? $_POST['Id'] : $_GET['id'] ?>">
@@ -63,7 +63,7 @@
                     <?php } } } ?>
 
                 <div class="button">
-                    <input style="width: 100%" type="submit" name="commit" value="save" form="">
+                    <input style="width: 100%" type="submit" name="commit" value="save">
                 </div>
                 </form>
             </div>
