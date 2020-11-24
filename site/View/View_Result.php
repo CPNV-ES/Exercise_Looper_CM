@@ -17,10 +17,9 @@
     </section>
 </header>
 
-<main class="container">
-
+<main class="ViewResultContainer">
     <div>
-        <table class="table">
+        <table>
             <th>Take</th>
             <?php while ($Field = $ExerciseFields->fetch()){ ?>
             <th><a href="?Page=DetailsByField&id=<?= $Field['id'] ?>"><?= $Field["Label"] ?></a></th>

@@ -16,7 +16,6 @@
                 </a>
             </section>
         </header>
-
         <main class="container">
             <div>
                 <h1> <?= $labelField ?></h1>
