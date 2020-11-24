@@ -102,7 +102,7 @@ function GetAnswers($id){
 
     $connect = getBD();
 
-    $req = "SELECT answers.Exercises_id, Response, Label, Fields_id as id FROM `answers` INNER JOIN `fields` ON answers.Fields_id = `fields`.id WHERE TimeStamp_id = $id";
+    $req = "SELECT answers.Exercises_id, ValueKind, Response, Label, Fields_id as id FROM `answers` INNER JOIN `fields` ON answers.Fields_id = `fields`.id WHERE TimeStamp_id = $id";
 
     $result = $connect->query($req);
 

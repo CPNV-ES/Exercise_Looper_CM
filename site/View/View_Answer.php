@@ -41,11 +41,13 @@
                             ?>
 
                             <a><?= $Field['Label'] ?></a>
-                            <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" value="<?= $Field['Response'] ?>" >
+                            <?php if($Field['ValueKind'] == "Single_line_text"){ ?>
+                                <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" value="<?= $Field['Response'] ?>" >
+                            <?php }else { ?>
+                                <textarea name="Answer:<?=$Field['id']?>:<?=$label?>" ><?= $Field['Response'] ?></textarea>
 
-
-                            <?php
-                            //break;
+                                <?php
+                            }
                         }
                     }else{
                         while ($Field=$ExerciseFields->fetch()){
