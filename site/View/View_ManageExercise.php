@@ -74,7 +74,6 @@
                         <tr><th>Title</th></tr>
                         <?php
                         while($Closed=$ExerciseClosed->fetch()){
-                        //0 = id; 1 = Title
                         ?>
                         <tr>
                             <td><?= $Closed["Title"] ?></td>
