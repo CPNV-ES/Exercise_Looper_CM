@@ -348,4 +348,9 @@ header.take {
   color: #26622b;
 }
 
+.answerTitles dt {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
 /*# sourceMappingURL=StyleGlobal.css.map */
