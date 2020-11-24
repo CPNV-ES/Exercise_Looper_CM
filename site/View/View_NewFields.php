@@ -68,8 +68,8 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                             <td class="td-line"><?= $AllField["Label"] ?></td>
                             <td class="td-line"><?= $AllField["ValueKind"] ?></td>
                             <td>
-                                <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit"></i></a>
-                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-trash"></i></a>
+                                <a title="Edit" href="?Page=EditField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-edit icon-color"></i></a>
+                                <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelField&idField=<?= $AllField["id"] ?>&idExercise=<?= $AllField["Exercises_id"] ?>"><i class="fa fa-trash icon-color"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
