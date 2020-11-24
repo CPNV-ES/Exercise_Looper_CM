@@ -14,6 +14,7 @@
         <a href="../index.php">
             <img class="miniLogo" src="../Assets/img/logo.png">
         </a>
+        <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $title ?></span></span>
     </section>
 </header>
 
@@ -22,16 +23,21 @@
         <table>
             <th>Take</th>
             <?php while ($Field = $ExerciseFields->fetch()){ ?>
-            <th><a href="?Page=DetailsByField&id=<?= $Field['id'] ?>"><?= $Field["Label"] ?></a></th>
+            <th><a href="?Page=DetailsByField&id=<?= $Field['id'] ?>&title=<?= $title ?>"><?= $Field["Label"] ?></a></th>
             <?php }  $oldTimestamp = "";
-            while ($Answer = $AllAnswer->fetch()){  $Timestamp = $Answer["TimeStamp"]; if($Timestamp != $oldTimestamp){   ?>
+            while ($Answer = $AllAnswer->fetch()){  $Timestamp = $Answer["TimeStamp"];
+                $NumWord = str_word_count($Answer['Response'], 0);
+
+
+                if($Timestamp != $oldTimestamp){
+                    ?>
                 <tr>
-                    <td><a href="?Page=DetailsByAnswer&id=<?= $Answer['TimeStamp_id'] ?>"><?= $Answer["TimeStamp"] ?></a></td>
-                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
+                    <td><a href="?Page=DetailsByAnswer&id=<?= $Answer['TimeStamp_id'] ?>&title=<?= $title ?>"><?= $Answer["TimeStamp"] ?></a></td>
+                    <td><?= $Answer["Response"] != "" ? $NumWord == 1 ? "<i class='fa fa-check short'></i>" : "<i class='fas fa-check-double'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
             <?php $oldTimestamp = $Timestamp; }
                 else
                 { ?>
-                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
+                    <td><?= $Answer["Response"] != "" ? $NumWord == 1 ? "<i class='fa fa-check short'></i>" : "<i class='fas fa-check-double'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
                 <?php } if($Timestamp != $oldTimestamp){
                 $TimeStamp = $oldTimestamp;
             ?>
@@ -44,3 +50,4 @@
 
 </main>
 </body>
+
