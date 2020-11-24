@@ -79,7 +79,7 @@
                         <tr>
                             <td><?= $Closed["Title"] ?></td>
                             <td class="icon">
-                                <a title="Manage fields" href="?Page=ResultExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-edit icon-color"></i></a>
+                                <a title="Manage fields" href="?Page=ResultExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-chart-bar icon-color"></i></a>
                                 <a data-confirm="Are you sure?" title="Destroy" rel="nofollow" data-method="delete" href="?Page=DelExercise&id=<?= $Closed["id"] ?>"><i class="fa fa-trash icon-color"></i></a>
                             </td>
                         </tr>
