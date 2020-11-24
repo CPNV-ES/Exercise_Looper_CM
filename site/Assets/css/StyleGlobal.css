@@ -182,7 +182,7 @@ hr.solid {
 
 .button > * {
   background-color: #9b4dca;
-  BORDER: none;
+  border: none;
   border-radius: 5px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-exercise {
-  margin: 0 auto;
+  margin: 80px 20px;
   margin-top: 50px;
   position: relative;
 }
@@ -328,6 +328,7 @@ header.take {
   padding-right: 20px;
 }
 
+
 .ViewResultContainer {
   margin-top: 60px;
   width: 100%;
@@ -356,6 +357,16 @@ header.take {
 .h1-ResultContainer {
   margin-top: 55px;
   margin-left: 25px;
+
+.containerField a {
+  color: #525151;
+}
+.containerField input {
+  margin-left: 0px;
+}
+.containerField h1 {
+  text-align-last: center;
+
 }
 
 /*# sourceMappingURL=StyleGlobal.css.map */
