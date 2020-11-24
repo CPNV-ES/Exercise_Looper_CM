@@ -14,6 +14,7 @@
                 <a href="../index.php">
                     <img class="miniLogo" src="../Assets/img/logo.png">
                 </a>
+                <span class="BannerTitle">Exercise : <span style="font-weight: bold;"><?= $_GET['title'] ?></span></span>
             </section>
         </header>
         <h1 class="h1-ResultContainer"> <?= $labelField ?></h1>

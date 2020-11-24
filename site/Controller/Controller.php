@@ -207,6 +207,7 @@ function ProgressAnswer(){
  */
 function ResultAnswer(){
     $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $title = GetExerciseById($_GET['id'])->fetch()['Title'];
     $AllAnswer = GetAllAnswer($_GET['id']);
     require 'View/View_Result.php';
 }
