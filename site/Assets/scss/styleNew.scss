@@ -41,7 +41,7 @@ hr.solid {
 
 .button > * {
     background-color: $color;
-    BORDER: none;
+    border: none;
     border-radius: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-exercise {
-    margin: 0 auto;
+    margin: 80px 20px;
     margin-top: 50px;
     position: relative;
 }
@@ -120,20 +120,10 @@ form {
 
 
 
-
-
 .container.column {
 
 
 }
-
-
-
-
-
-
-
-
 
 
 label, legend {

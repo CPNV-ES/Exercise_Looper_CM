@@ -1,0 +1,36 @@
+.ViewResultContainer{
+    margin-top: 60px;
+    width: 100%;
+  
+    div{
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        th{
+            text-align: left;
+            width: 200px;
+        }
+
+        tr{
+            a{
+                text-decoration: none;
+            }
+
+            i{
+                color: $manageColor;
+            }
+        }
+    }
+}
+
+.answerTitles{
+    dt{
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+}
+
+.h1-ResultContainer{
+    margin-top: 55px;
+    margin-left: 25px;
+}

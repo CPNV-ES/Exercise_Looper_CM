@@ -18,7 +18,7 @@
         </header>
 
         <main class="container">
-            <dl>
+            <dl class="answerTitles">
                 <h1> <?= $TimeStamp ?></h1>
                 <?php while ($Answer = $Answers->fetch()){     ?>
                     <dt><?= $Answer["Label"] ?></dt>

@@ -16,10 +16,10 @@
                 </a>
             </section>
         </header>
+        <h1 class="h1-ResultContainer"> <?= $labelField ?></h1>
 
-        <main class="container">
+        <main class="ViewResultContainer">
             <div>
-                <h1> <?= $labelField ?></h1>
                 <table class="table">
                     <tr>
                         <th>Take</th>

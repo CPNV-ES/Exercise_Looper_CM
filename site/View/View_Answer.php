@@ -20,8 +20,12 @@
         </header>
 
         <main class="container">
+            <div class="containerField">
             <h1>Your take</h1>
-            <a><?= isset($IdAnswers) ? "Bookmark this page, it's yours. You'll be able to come back later to finish." : "If you'd like to come back later to finish, simply submit it with blanks" ?></a>
+                <p>
+                    <?= isset($IdAnswers) ? "Bookmark this page, it's yours. You'll be able to come back later to finish." : "If you'd like to come back later to finish, simply submit it with blanks" ?>
+                </p>
+            </div>
             <div class="containerField">
                 <form action="index.php<?= isset($IdAnswers) ? "?Page=AnswerProgress&id=".$IdAnswers : "" ?>" method="post">
                     <input type="hidden" name="Page" value="<?= isset($IdAnswers) ? "AnswerProgress" : "SaveAnswer" ?>">
@@ -37,11 +41,13 @@
                             ?>
 
                             <a><?= $Field['Label'] ?></a>
-                            <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" value="<?= $Field['Response'] ?>" >
+                            <?php if($Field['ValueKind'] == "Single_line_text"){ ?>
+                                <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" value="<?= $Field['Response'] ?>" >
+                            <?php }else { ?>
+                                <textarea name="Answer:<?=$Field['id']?>:<?=$label?>" ><?= $Field['Response'] ?></textarea>
 
-
-                            <?php
-                            //break;
+                                <?php
+                            }
                         }
                     }else{
                         while ($Field=$ExerciseFields->fetch()){
@@ -49,9 +55,12 @@
                         ?>
 
                         <a><?= $Field['Label'] ?></a>
+                            <?php if($Field['ValueKind'] == "Single_line_text"){ ?>
                         <input type="text" name="Answer:<?=$Field['id']?>:<?=$label?>" <?php if(isset($_POST['Answer:'.$Field['id'].':'.$label])){ ?> value="<?=$_POST['Answer:'.$Field['id'].':'.$label] ?>" <?php } ?>>
+                            <?php }else { ?>
+                                <textarea name="Answer:<?=$Field['id']?>:<?=$label?>" ></textarea>
 
-                    <?php } } ?>
+                    <?php } } } ?>
 
                 <div class="button">
                     <input style="width: 100%" type="submit" name="commit" value="save">
