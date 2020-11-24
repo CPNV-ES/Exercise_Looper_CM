@@ -27,11 +27,11 @@
             while ($Answer = $AllAnswer->fetch()){  $Timestamp = $Answer["TimeStamp"]; if($Timestamp != $oldTimestamp){   ?>
                 <tr>
                     <td><a href="?Page=DetailsByAnswer&id=<?= $Answer['TimeStamp_id'] ?>"><?= $Answer["TimeStamp"] ?></a></td>
-                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
+                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty red-cross'></i>"  ?></td>
             <?php $oldTimestamp = $Timestamp; }
                 else
                 { ?>
-                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty'></i>"  ?></td>
+                    <td><?= $Answer["Response"] != "" ? $Answer['ValueKind'] == "Single_line_text" ? "<i class='fa fa-check short'></i>" : "<i class='fa fa-double filled'></i>" : "<i class='fa fa-times empty red-cross'></i>"  ?></td>
                 <?php } if($Timestamp != $oldTimestamp){
                 $TimeStamp = $oldTimestamp;
             ?>

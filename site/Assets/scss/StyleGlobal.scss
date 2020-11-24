@@ -8,10 +8,14 @@
 $manageColor : #26622b;
 $newColor : #c87d0d;
 $takeColor : #9b4dca;
-
+$redColor : #E91E63;
 
 main {
   display: block;
+}
+
+.red-cross {
+  color: $redColor !important;
 }
 
 body {

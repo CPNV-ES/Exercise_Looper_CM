@@ -8,6 +8,10 @@ main {
   display: block;
 }
 
+.red-cross {
+  color: #E91E63 !important;
+}
+
 body {
   color: #606c76;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
