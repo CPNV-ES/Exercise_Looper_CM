@@ -170,6 +170,7 @@ function SaveAnswer(){
     }
 
     $IdAnswers = $TimeStamp;
+    header("Location: index.php?Page=AnswerProgress&id=$IdAnswers");
     $ExerciseFields = GetFieldsByExercise($_POST['Id']);
     $ExerciseTitle = GetExerciseById($_POST['Id']);
     require 'View/View_Answer.php';
