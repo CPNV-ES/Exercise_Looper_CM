@@ -190,6 +190,12 @@ function CreateExercise($Title){
     // Exécution de la requete
 
     $connect->exec($req);
+
+    $req = "SELECT id FROM exercises ORDER BY id DESC LIMIT 1";
+
+    $result = $connect->query($req);
+
+    return $result;
 }
 
 /**
