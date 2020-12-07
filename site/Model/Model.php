@@ -83,11 +83,11 @@ function GetFieldsById($id){
  * @Description
  * @return PDOStatement
  */
-function GetOneExercise($Title){
+function GetOneExercise($id){
 
     $connect = getBD();
 
-    $req = "SELECT id FROM exercises WHERE Title = '".$Title."'";
+    $req = "SELECT title FROM exercises WHERE id = $id";
 
     $result = $connect->query($req);
 
