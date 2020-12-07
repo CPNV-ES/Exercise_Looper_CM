@@ -309,6 +309,14 @@ function UpdateAnswers($id, $idField, $answer){
 function DeleteExercise($id){
     $connection = getBD();
 
+    $req = "DELETE FROM answers WHERE Exercises_id = $id";
+
+    $connection->exec($req); 
+
+    $req = "DELETE FROM `timestamp` WHERE Exercises_id = $id";
+
+    $connection->exec($req);
+
     $req = "DELETE FROM fields WHERE Exercises_id = $id";
 
     $connection->exec($req);
