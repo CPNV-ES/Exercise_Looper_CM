@@ -205,9 +205,9 @@ function CreateExercise($Title){
 function CreateFields($Id, $Title, $Value){
     // connexion à la BD exercicelooper
     $connect = getBD();
-
+    $label = str_replace("'", "\'", $Title);
     // Création de la string pour la requête
-    $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$Title', '$Value', ".$Id.")";
+    $req = "INSERT INTO fields (Label, ValueKind, Exercises_id) VALUES ('$label', '$Value', ".$Id.")";
     // Exécution de la requete
 
     $connect->exec($req);
