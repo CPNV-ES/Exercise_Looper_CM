@@ -39,13 +39,12 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
     $FieldsArray = explode( ",", $Fields);
     $ValueKindArray = explode(",", $ValueKind);
 
-    if(isset($_POST['Title'])) {
-        $Exercise = GetOneExercise($_POST['Title']);
-        $id = $Exercise->fetch();
-    }elseif(isset($_POST['idExercise'])){
-        $Exercise = GetOneExercise($Title[0]);
-        $id = $Exercise->fetch();
+    if(isset($idExercise["id"])) {
+        $id = $idExercise["id"];
+    }else{
+        $id = $idExercise;
     }
+
 
     $FieldExist=$OneFieldExist->fetch();
 
@@ -149,7 +148,7 @@ if(isset($_GET['Page']) || isset($_POST['idExercise'])){
                 <h1>New Field</h1>
                 <form action="index.php" method="post">
                     <input type="hidden" name="Page" value="AddQuestion">
-                    <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id[0] ?>">
+                    <input type="hidden" name="IdExercise" value="<?= isset($_POST['IdExercise']) ? $_POST['IdExercise'] : $id ?>">
                     <input type="hidden" name="ValueKind" value="<?= $ValueKind ?>">
                     <input type="hidden" name="Fields" value="<?= $Fields ?>">
                     <input type="hidden" name="Title" value="<?= isset($_POST['Title']) ? $_POST['Title'] : $Title[0] ?>">

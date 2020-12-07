@@ -83,11 +83,11 @@ function GetFieldsById($id){
  * @Description
  * @return PDOStatement
  */
-function GetOneExercise($Title){
+function GetOneExercise($id){
 
     $connect = getBD();
 
-    $req = "SELECT id FROM exercises WHERE Title = '".$Title."'";
+    $req = "SELECT title FROM exercises WHERE id = $id";
 
     $result = $connect->query($req);
 
@@ -220,9 +220,13 @@ function CreateFields($Id, $Title, $Value){
 function CreateAnswer($Response, $IdExercise, $IdTimeStamp, $IdField){
     // connexion à la BD exercicelooper
     $connect = getBD();
-
+    if(strpos($Response, "'") == false) {
+        $Answer = str_replace("'", "\'", $Response);
+    }else{
+        $Answer = $Response;
+    }
     // Création de la string pour la requête
-    $req = "INSERT INTO answers (Response, Exercises_id, TimeStamp_id, Fields_id) VALUES ('$Response', $IdExercise, $IdTimeStamp, $IdField)";
+    $req = "INSERT INTO answers (Response, Exercises_id, TimeStamp_id, Fields_id) VALUES ('$Answer', $IdExercise, $IdTimeStamp, $IdField)";
     // Exécution de la requete
 
     $connect->exec($req);
@@ -290,12 +294,16 @@ function UpdateOneField($id){
  * @Description
  * @return PDOStatement
  */
-function UpdateAnswers($id, $idField, $answer){
+function UpdateAnswers($id, $idField, $Response){
     // connexion à la BD exercicelooper
     $connection = getBD();
-
+    if(strpos($Response, "\'") == false) {
+        $Answer = str_replace("'", "\'", $Response);
+    }else{
+        $Answer = $Response;
+    }
     // Création de la string pour la requête
-    $req = "UPDATE answers SET Response = '$answer' WHERE TimeStamp_id = $id AND Fields_id = $idField";
+    $req = "UPDATE answers SET Response = '$Answer' WHERE TimeStamp_id = $id AND Fields_id = $idField";
     // Exécution de la requete
 
     $connection->exec($req);

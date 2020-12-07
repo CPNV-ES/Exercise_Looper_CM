@@ -51,7 +51,7 @@ function manageExercise(){
  */
 function NewFields(){
     $idExercise = CreateExercise($_POST['Title'])->fetch();
-    $ExerciseFields = GetFieldsByExercise($idExercise[0]);
+    $ExerciseFields = GetFieldsByExercise($idExercise["id"]);
     $OneFieldExist = GetFieldsByExercise($idExercise["id"]);
     require 'View/View_NewFields.php';
 }
