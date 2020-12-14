@@ -5,8 +5,18 @@
  * Date: 01/09/2020
  */
 
-//appel du fichier model.php pour pouvoir avoir accès au fonction dans le fichier
+?>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Exercice Looper</title>
+        <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
+        <Link href="../Assets/css/StyleGlobal.css" rel="stylesheet" type="text/css">
+    </head>
+<?php
+
 require "Model/Model.php";
+
+
 /**
  * @Description Permet d'accéder à l'accueil
  */
@@ -25,8 +35,53 @@ function NewExercise(){
 /**
  * @Description
  */
+function manageExercise(){
+
+    $ExerciseBuilding = GetExerciseByState("Building");
+    $ExerciseAnswering = GetExerciseByState("Answering");
+    $ExerciseClosed = GetExerciseByState("Closed");
+
+    require 'View/View_ManageExercise.php';
+}
+
+
+
+/**
+ * @Description
+ */
 function NewFields(){
-    CreateExercise($_POST['Title']);
+    $idExercise = CreateExercise($_POST['Title'])->fetch();
+    $ExerciseFields = GetFieldsByExercise($idExercise["id"]);
+    $OneFieldExist = GetFieldsByExercise($idExercise["id"]);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function EditFields(){
+    $ExerciseTitle = GetExerciseById($_GET['id']);
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $OneFieldExist = GetFieldsByExercise($_GET['id']);
+    require 'View/View_NewFields.php';
+}
+
+/**
+ * @Description
+ */
+function EditOneField(){
+    $ExerciseField = GetFieldsById($_GET['idField']);
+    require 'View/View_EditField.php';
+}
+
+/**
+ * @Description
+ */
+function UpdateField(){
+    $ExerciseTitle = GetExerciseById($_POST['idExercise']);
+    UpdateOneField($_POST['idField']);
+    $ExerciseFields = GetFieldsByExercise($_POST['idExercise']);
+    $OneFieldExist = GetFieldsByExercise($_POST['idExercise']);
     require 'View/View_NewFields.php';
 }
 
@@ -35,6 +90,9 @@ function NewFields(){
  */
 function NewQuestion(){
     CreateFields($_POST['IdExercise'], $_POST['ExerciseTitle'], $_POST['FieldValue']);
+    $idExercise = $_POST['IdExercise'];
+    $ExerciseFields = GetFieldsByExercise($idExercise);
+    $OneFieldExist = GetFieldsByExercise($idExercise);
     require 'View/View_NewFields.php';
 }
 
@@ -42,28 +100,138 @@ function NewQuestion(){
  * @Description
  */
 function CompleteExercise(){
-    UpdateStateExercise($_GET['Id']);
-    homePage();
+    UpdateStateExercise($_GET['id'], "Answering");
+    manageExercise();
 }
 
+/**
+ * @Description
+ */
+function ClosedExercise(){
+    UpdateStateExercise($_GET['id'], "Closed");
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelExercise(){
+    DeleteExercise($_GET['id']);
+    manageExercise();
+}
+
+/**
+ * @Description
+ */
+function DelField(){
+    $ExerciseTitle = GetExerciseById($_GET['idExercise']);
+    DeleteField($_GET['idField']);
+    $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
+    $OneFieldExist = GetFieldsByExercise($_GET['idExercise']);
+    require 'View/View_NewFields.php';
+}
+
+
+
+/**
+ * @Description
+ */
 function takeExercise(){
 
-    require 'View/takeExercise.php';
+    $ExerciseAnswering = GetExerciseByState("Answering");
+    require 'View/View_TakeExercise.php';
 }
 
-function manageExercise(){
-    require 'View/manageExercise.php';
 
+/**
+ * @Description
+ */
+function AnsweringPage(){
+
+    $ExerciseFields = GetFieldsByExercise($_POST['Id']);
+    $ExerciseTitle = GetExerciseById($_POST['Id']);
+    require 'View/View_Answer.php';
 }
 
-//It could be useful to use that 'cause we can manage a lot of line and time.
-//Discussion in progress.
-function openNewPage($url){
+/**
+ * @Description
+ */
+function SaveAnswer(){
 
-    require 'View/' . $url . '.php';
+    $TimeStamp = CreateTimeStamp($_POST['Id']);
+
+    foreach($_POST as $name_post => $answer) {
+
+        $result = explode(":", $name_post);
+        if ($result[0] == "Answer") {
+            CreateAnswer($answer, $_POST['Id'], $TimeStamp, $result[1]);
+        }
+    }
+
+    $IdAnswers = $TimeStamp;
+    header("Location: index.php?Page=AnswerProgress&id=$IdAnswers");
+    $ExerciseFields = GetFieldsByExercise($_POST['Id']);
+    $ExerciseTitle = GetExerciseById($_POST['Id']);
+    require 'View/View_Answer.php';
+}
+
+/**
+ * @Description
+ */
+function ProgressAnswer(){
+
+    foreach($_POST as $name_post => $answer) {
+
+        $result = explode(":", $name_post);
+        if ($result[0] == "Answer") {
+            UpdateAnswers($_GET['id'], $result[1], $answer);
+        }
+    }
+    $idExercise = GetAnswers($_GET['id'])->fetch()['Exercises_id'];
+    $IdAnswers = $_GET['id'];
+    $AnswerInfos = GetAnswers($_GET['id']);
+    $ExerciseFields = GetFieldsByExercise($idExercise);
+    $ExerciseTitle = GetExerciseById($idExercise);
+    require 'View/View_Answer.php';
+}
+
+
+
+
+
+
+
+/**
+ * @Description
+ */
+function ResultAnswer(){
+    $ExerciseFields = GetFieldsByExercise($_GET['id']);
+    $title = GetExerciseById($_GET['id'])->fetch()['Title'];
+    $AllAnswer = GetAllAnswer($_GET['id']);
+    require 'View/View_Result.php';
 }
 /**
- * @Description Permet d'afficher la page d'erreur quand la page de destination n'existe pas
+ * @Description
+ */
+function DetailsByField(){
+    $labelField = GetFieldsById($_GET['id'])->fetch()['Label'];
+    $Answers = GetAnswersByField($_GET['id']);
+    require 'View/View_ResultByField.php';
+}
+/**
+ * @Description
+ */
+function DetailsByAnswer(){
+    $TimeStamp = GetTimestamp($_GET['id'])->fetch()['TimeStamp'];
+    $Answers = GetAnswersByAnswer($_GET['id']);
+    require 'View/View_ResultByAnswer.php';
+}
+
+
+
+
+/**
+ * @Description Display erros if the webpaage searched doesn't exists
  */
 function error(){
     //affichage de la page d'erreur

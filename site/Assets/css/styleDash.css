@@ -1,0 +1,36 @@
+/**
+ * Created by PhpStorm.
+ * User: Cyril Goldenschue
+ * Date: 29/09/2020
+ */
+.icon {
+  justify-content: right; }
+
+main.container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.tableManage {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.tableManage > .column {
+  width: auto;
+  margin-bottom: 50px;
+  margin-left: 50px; }
+
+header.dashbord {
+  background-color: #26622b;
+  height: 3rem; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+  display: block; }
+
+/*# sourceMappingURL=styleDash.css.map */

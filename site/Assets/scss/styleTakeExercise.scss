@@ -1,0 +1,27 @@
+/**
+ * Style Take Exercise
+ * Created by PhpStorm.
+ * User: Mahieu Burnat & Cyril Goldenschue
+ * Date: 27/10/2020
+ */
+
+$takeColor : #9b4dca;
+
+
+
+#takeEx-h1{
+  color: white;
+}
+
+header.take {
+  background-color: $takeColor;
+  height: 3rem; }
+
+.containerExercise{
+  width: 70%;
+  text-align: center;
+  background: ghostwhite;
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-right: 20px;
+}

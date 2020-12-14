@@ -1,40 +1,47 @@
 /**
+ * Style New Exercise
  * Created by PhpStorm.
  * User: Mahieu Burnat & Cyril Goldenschue
  * Date: 01/09/2020
  */
 
+
 $color: #9b4dca;
 
-main {
-    display: block;
+.row{
+    
+    h1{
+        margin-top : 20px;
+    }
+
+    th{
+        color : $color;
+        text-align: center;
+    }
+
+    tr{
+        text-align: left;
+    }
+
+    tr > .td-line
+    {
+        border-bottom: 1px solid #bbb;
+            padding: 0.5rem 1.5rem;
+    }
 }
 
-body {
-    color: #606c76;
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-size: 1.6em;
-    font-weight: 3000;
-    letter-spacing: .01em;
-    line-height: 1.6;
+hr.solid {
+    border-top: 3px solid #bbb;
 }
 
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button {
-    display: block;
-    text-align: center;
-    padding-top: 10px;
-
+.buttonNewFields{
+    text-align: left;
+    color: #9b4dca;
 }
 
 .button > * {
     background-color: $color;
-    BORDER: none;
+    border: none;
     border-radius: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -45,50 +52,6 @@ body {
     font-size: 15px;
 }
 
-#buttonTake{
-    background-color: $color;
-}
-
-#buttonCreate{
-    background-color: #c87d0d;
-}
-
-#buttonManage{
-    background-color: #26622b;
-}
-
-.title{
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.title > h1{
-    font-size: 50px;
-}
-
-.title > h2{
-    font-size: 35px;
-}
-
-.miniLogo{
-    height: 50px;
-    width: 50px;
-}
-
-header.heading{
-    height: 5rem;
-    color: white;
-    display: block;
-    left: 0;
-    max-width: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
 
 header.home{
     background-color: blueviolet;
@@ -98,17 +61,6 @@ header.creating{
     background-color: #e0a458;
     height: 3rem;
 }
-
-.BannerTitle{
-    margin: auto;
-    margin-left: 2rem;
-    color: white;
-    font-size: 17px;
-}
-
-
-
-
 
 
 /* modifiable a partir de maintenant*/
@@ -129,111 +81,51 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-
-
-
-
-
-.container {
-    margin: 0 auto;
-    max-width: 112.0rem;
-    padding: 0 2.0rem;
+.container-exercise {
+    margin: 80px 20px;
+    margin-top: 50px;
     position: relative;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
 }
-
 
 
 form {
-    display: block;
-    margin-top: 0;
-    margin-block-end: 1rem;
-    margin-bottom: 2.5rem;
+    color: #9b4dca;
+    width:100%
 }
 
-blockquote, dl, figure, form, ol, p, pre, table, ul {
-
+* {
+    box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-*, *:after, *:before {
-    box-sizing: inherit;
-}
-
-
-
-
-
-
-
-.container.column{
-
-}
-
-main, section {
-    display: block;
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
     width: 50%;
-    position: absolute;
+    min-width: 500px;
+    padding: 10px;
 }
 
-div.field, div.actions {
-    margin-bottom: 10px;
-    display: block;
+/* Clear floats after the columns */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
 
-main.container {
-    margin-top: 5rem;
+.container.column {
+
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
-    background-color: #9b4dca;
-    border: 0.1rem solid #9b4dca;
-    border-radius: .4rem;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    height: 3rem;
-    letter-spacing: .1rem;
-    line-height: 3.8rem;
-    padding: 0 3.0rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-*/
 label, legend {
     display: block;
     font-size: 1.1rem;
@@ -242,16 +134,11 @@ label, legend {
 }
 
 input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], textarea, select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     background-color: transparent;
     border: 0.1rem solid #d1d1d1;
     border-radius: .4rem;
-    box-shadow: none;
-    box-sizing: inherit;
-    height: 1rem;
     padding: .6rem 1.0rem;
     width: 100%;
+    margin-bottom: 10px;
 }
 

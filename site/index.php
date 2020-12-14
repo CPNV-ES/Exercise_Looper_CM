@@ -5,6 +5,8 @@
  * Date: 01/09/2020
  */
 
+//phpinfo();
+
 //Display Errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -16,7 +18,7 @@ require "Controller/Controller.php";
 
 try {
     if (isset($_GET['Page']) or isset($_POST['Page'])) {
-        $Page = "Home";
+        $Page = "Accueil";
         if(isset($_GET['Page'])){
             $Page = $_GET['Page'];
         }elseif (isset($_POST['Page'])){
@@ -24,27 +26,63 @@ try {
         }
         // Sélection de l'action passée par l'URL
         switch ($Page) {
+            //reception
             case 'Accueil':
                 homePage();
                 break;
+            case 'Answering':
+                AnsweringPage();
+                break;
+            case 'SaveAnswer':
+                SaveAnswer();
+                break;
+            case 'AnswerProgress':
+                ProgressAnswer();
+                break;
             case 'NewExercise':
-                  NewExercise();
-                  break;
+                NewExercise();
+                break;
             case 'Fields':
                 NewFields();
+                break;
+            case 'FieldsEdit':
+                EditFields();
+                break;
+            case 'EditField':
+                EditOneField();
+                break;
+            case 'FieldsUpdate':
+                UpdateField();
                 break;
             case 'AddQuestion':
                 NewQuestion();
                 break;
             case 'CompleteExercise':
                 CompleteExercise();
-              break;
+                break;
+            case 'ClosedExercise':
+                ClosedExercise();
+                break;
+            case 'ResultExercise':
+                ResultAnswer();
+                break;
+            case 'DetailsByField':
+                DetailsByField();
+                break;
+            case 'DetailsByAnswer':
+                DetailsByAnswer();
+                break;
             case 'TakeExercise':
                 takeExercise();
                 break;
             case 'ManageExercise':
                 manageExercise();
-
+                break;
+            case 'DelExercise':
+                DelExercise();
+                break;
+            case 'DelField':
+                DelField();
                 break;
             default :
                 error();

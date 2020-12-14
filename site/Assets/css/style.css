@@ -3,82 +3,38 @@
  * User: Mahieu Burnat
  * Date: 01/09/2020
  */
-
-body{
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    margin: 0;
-}
-
 .title > * {
-    margin: 0;
-}
+  margin: 0; }
 
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-.banner{
-    background-color: #9b4dca;
-    padding-bottom: 100px;
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 50px;
-}
-
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.title{
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
-}
-
-.title > h1{
-    font-size: 50px;
-}
-
-.title > h2{
-    font-size: 35px;
-}
+.banner {
+  background-color: #9b4dca;
+  padding-bottom: 100px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 50px; }
 
 .container-button {
-    text-align: center;
-    padding-top: 15px;
-
-    justify-content: center;
-    flex-wrap: wrap;
-    display: flex;
-}
+  text-align: center;
+  padding-top: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex; }
 
 .container-button > * {
-    width: 300px;
-    border-radius: 5px;
-    text-decoration: blink;
-    border-radius: 5px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin: 10px;
-    color: white;
-    font-size: 15px;
-}
-#buttonTake{
-    background-color: #9b4dca;
-}
+  width: 300px;
+  border-radius: 5px;
+  text-decoration: blink;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 10px;
+  color: white;
+  font-size: 15px; }
 
-#buttonCreate{
-    background-color: #c87d0d;
-
-}
-
-#buttonManage{
-    background-color: #26622b;
-
-}
+/*# sourceMappingURL=style.css.map */

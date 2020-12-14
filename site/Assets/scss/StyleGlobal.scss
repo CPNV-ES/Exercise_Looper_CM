@@ -1,0 +1,132 @@
+/**
+ * Global
+ * Created by PhpStorm.
+ * User: Mahieu Burnat & Cyril Goldenschue
+ * Date: 06/10/2020
+ */
+
+$manageColor : #26622b;
+$newColor : #c87d0d;
+$takeColor : #9b4dca;
+$redColor : #E91E63;
+
+main {
+  display: block;
+}
+
+.red-cross {
+  color: $redColor !important;
+}
+
+body {
+  color: #606c76;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.6em;
+  font-weight: 3000;
+  letter-spacing: .01em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+#buttonTake{
+  background-color: $takeColor;
+}
+
+#buttonCreate{
+  background-color: $newColor;
+}
+
+#buttonManage{
+  background-color: $manageColor;
+}
+
+.title{
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.title{
+  h1{
+    font-size: 50px;
+  }
+
+  h2{
+    font-size: 35px;
+  }
+}
+
+.miniLogo{
+  height: 50px;
+  width: 50px;
+}
+
+.BannerTitle{
+  margin: auto;
+  margin-left: 2rem;
+  color: white;
+  font-size: 17px;
+}
+
+header.heading{
+  height: 5rem;
+  color: white;
+  display: block;
+  left: 0;
+  max-width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 112.0rem;
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+main.container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.icon-color{
+  color: $takeColor;
+}
+
+
+
+@import "style.scss";
+@import "styleNew.scss";
+@import "styleDash.scss";
+@import "styleTakeExercise.scss";
+@import "styleResult.scss";
+@import "styleAnswer.scss";
+
+
+
+
