@@ -80,6 +80,7 @@ function EditOneField(){
 function UpdateField(){
     $ExerciseTitle = GetExerciseById($_POST['idExercise']);
     UpdateOneField($_POST['idField']);
+    $idExercise = $_POST['idExercise'];
     $ExerciseFields = GetFieldsByExercise($_POST['idExercise']);
     $OneFieldExist = GetFieldsByExercise($_POST['idExercise']);
     require 'View/View_NewFields.php';
@@ -126,6 +127,7 @@ function DelExercise(){
 function DelField(){
     $ExerciseTitle = GetExerciseById($_GET['idExercise']);
     DeleteField($_GET['idField']);
+    $idExercise = $_GET['idExercise'];
     $ExerciseFields = GetFieldsByExercise($_GET['idExercise']);
     $OneFieldExist = GetFieldsByExercise($_GET['idExercise']);
     require 'View/View_NewFields.php';
